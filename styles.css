@@ -5,3 +5,7 @@
 .workspace-toolbar strong{color:var(--blue)}
 .workspace-close{padding:8px 12px;border:2px solid var(--ink);border-radius:8px;background:var(--orange);color:var(--ink);font:900 12px var(--body);cursor:pointer}
 .workspace-overlay iframe{display:block;min-width:0;width:100%;height:100%;border:0;background:var(--paper)}
+
+/* Lab slides have more live-runtime controls: anchor them inside the viewport instead of centering a tall column. */
+.lab-detail{align-items:start}
+
