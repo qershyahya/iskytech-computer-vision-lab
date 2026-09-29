@@ -25,6 +25,34 @@
       "role": "decoration",
       "subject": "three image tiles",
       "status": "generated"
+    },
+    {
+      "file": "mission-camera-mug.png",
+      "role": "main illustration",
+      "slide": "Mission: find the yellow mug",
+      "subject": "camera observing one mug",
+      "status": "generated"
+    },
+    {
+      "file": "mission-cue-camera.png",
+      "role": "concept cue",
+      "slide": "Mission: find the yellow mug",
+      "subject": "camera",
+      "status": "generated"
+    },
+    {
+      "file": "mission-cue-swatch.png",
+      "role": "concept cue",
+      "slide": "Mission: find the yellow mug",
+      "subject": "yellow color swatch",
+      "status": "generated"
+    },
+    {
+      "file": "mission-cue-target.png",
+      "role": "concept cue",
+      "slide": "Mission: find the yellow mug",
+      "subject": "target ring",
+      "status": "generated"
     }
   ]
 }
