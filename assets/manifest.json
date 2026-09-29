@@ -65,6 +65,13 @@
       "role": "decoration",
       "subject": "crop-corner pair",
       "status": "generated"
+    },
+    {
+      "file": "failure-mug-shadow.png",
+      "role": "main illustration",
+      "slide": "Predict failure",
+      "subject": "mug half in shadow",
+      "status": "generated"
     }
   ]
 }
