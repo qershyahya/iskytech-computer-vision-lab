@@ -59,3 +59,5 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 .segmentation-visual .main-asset{max-height:39vh;object-fit:contain;border:0;border-radius:0;background:transparent}
 
 .landmarks-visual{display:grid;gap:12px;align-content:center}.landmarks-visual .main-asset{max-height:39vh;object-fit:contain;border:0;border-radius:0;background:transparent}
+
+.tracking-visual{display:grid;gap:12px;align-content:center}.tracking-visual .main-asset{max-height:35vh;object-fit:contain;border:0;border-radius:0;background:transparent}

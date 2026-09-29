@@ -245,6 +245,34 @@
       "slide": "Landmarks lab",
       "subject": "coordinate crosshair",
       "status": "generated"
+    },
+    {
+      "file": "tracking-ball-trail.png",
+      "role": "main illustration",
+      "slide": "Tracking lab",
+      "subject": "moving ball shown across three positions",
+      "status": "generated"
+    },
+    {
+      "file": "tracking-cue-id-tag.png",
+      "role": "concept cue",
+      "slide": "Tracking lab",
+      "subject": "anonymous tracking tag",
+      "status": "generated"
+    },
+    {
+      "file": "tracking-cue-occlusion.png",
+      "role": "concept cue",
+      "slide": "Tracking lab",
+      "subject": "occlusion overlap",
+      "status": "generated"
+    },
+    {
+      "file": "tracking-cue-frames.png",
+      "role": "concept cue",
+      "slide": "Tracking lab",
+      "subject": "three consecutive video frames",
+      "status": "generated"
     }
   ]
 }
