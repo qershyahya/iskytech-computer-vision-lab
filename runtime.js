@@ -7,7 +7,7 @@
   if (!firstPanel) return;
   const repositoryPath = `${config.githubOwner}/${config.repository}/${config.ref}`;
   const firstNotebook = firstPanel.dataset.notebook;
-  const binderUrl = `https://mybinder.org/v2/gh/${repositoryPath}?urlpath=lab/tree/${encodeURIComponent(firstNotebook)}`;
+  const binderUrl = `${config.binderHost || "https://mybinder.org"}/v2/gh/${repositoryPath}?urlpath=lab/tree/${encodeURIComponent(firstNotebook)}`;
   const iframe = document.createElement('iframe');
   iframe.className = 'live-binder-frame';
   iframe.src = binderUrl;
@@ -39,3 +39,4 @@
 
   window.addEventListener('deck:slidechange', (event) => showWorkspace(event.detail.slide));
 })();
+
