@@ -1,7 +1,8 @@
-# Binder uses this file when it builds the public notebook repository.
-# Pin only packages used directly by the five lesson notebooks.
-ultralytics>=8.3,<9
-mediapipe>=0.10,<0.11
-opencv-python-headless>=4.10,<5
-Pillow>=10,<12
-ipython>=8,<10
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.3.1+cpu
+torchvision==0.18.1+cpu
+ultralytics==8.3.0
+mediapipe==0.10.20
+opencv-python-headless==4.10.0.84
+Pillow==10.4.0
+ipython==8.26.0
