@@ -3,29 +3,36 @@
   const valid = config.enabled && config.binderHost && config.githubOwner && config.repository && config.ref;
   if (!valid) return;
 
-  const repositoryPath = `${config.githubOwner}/${config.repository}/${config.ref}`;
   const firstPanel = document.querySelector('[data-notebook]');
   if (!firstPanel) return;
+  const repositoryPath = `${config.githubOwner}/${config.repository}/${config.ref}`;
   const firstNotebook = firstPanel.dataset.notebook;
   const binderUrl = `${config.binderHost}/v2/gh/${repositoryPath}?urlpath=lab/tree/${encodeURIComponent(firstNotebook)}`;
-  const buildUrl = `${config.binderHost}/build/gh/${repositoryPath}`;
-  let workspaceOpened = false;
+  const iframe = document.createElement('iframe');
+  iframe.className = 'live-binder-frame';
+  iframe.src = binderUrl;
+  iframe.title = 'Live computer-vision notebook workspace';
+  iframe.allow = 'clipboard-read; clipboard-write';
+  iframe.loading = 'eager';
 
-  // Start the cached image/server request from slide 1. Binder's JupyterLab sets frame-ancestors 'self', so it cannot be embedded in this deck.
-  fetch(buildUrl, { mode: 'no-cors', cache: 'no-store' }).catch(() => {});
-  document.body.classList.add('binder-external');
+  const parking = document.createElement('div');
+  parking.id = 'binder-parking';
+  parking.append(iframe);
+  document.body.append(parking);
+  document.body.classList.add('binder-enabled');
   document.querySelectorAll('[data-notebook]').forEach((panel) => {
-    panel.querySelector('[data-runtime-status]').textContent = 'SHARED BINDER WORKSPACE';
-    panel.querySelector('[data-runtime-copy]').textContent = 'The live workspace opens automatically when you enter the first lab.';
+    panel.querySelector('[data-runtime-status]').textContent = 'LIVE WORKSPACE PREPARING';
+    panel.querySelector('[data-runtime-copy]').textContent = 'This shared Binder session starts in the background from slide 1 and appears here automatically.';
   });
 
-  window.addEventListener('deck:slidechange', (event) => {
-    if (workspaceOpened || !event.detail.slide.querySelector('[data-notebook]')) return;
-    workspaceOpened = true;
-    const workspace = window.open(binderUrl, 'computer-vision-binder');
-    if (workspace) return;
-    workspaceOpened = false;
-    event.detail.slide.querySelector('[data-runtime-status]').textContent = 'ALLOW THE BINDER TAB';
-    event.detail.slide.querySelector('[data-runtime-copy]').textContent = 'Your browser blocked the automatic tab. Use the notebook download or Colab option on this slide.';
-  });
+  const showWorkspace = (slide) => {
+    const panel = slide?.querySelector('[data-notebook]');
+    if (panel) {
+      panel.querySelector('[data-runtime-frame]').append(iframe);
+      panel.querySelector('[data-runtime-status]').textContent = 'LIVE WORKSPACE';
+      return;
+    }
+    parking.append(iframe);
+  };
+  window.addEventListener('deck:slidechange', (event) => showWorkspace(event.detail.slide));
 })();
