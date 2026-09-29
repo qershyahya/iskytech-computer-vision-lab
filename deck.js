@@ -1,5 +1,28 @@
 (() => {
   const slides = [...document.querySelectorAll('.slide')];
+  const decorationSlots = [
+    ["4%", "4%"], ["24%", "3%"], ["48%", "3%"], ["72%", "4%"], ["94%", "6%"],
+    ["3%", "28%"], ["97%", "31%"], ["3%", "60%"], ["97%", "65%"],
+    ["5%", "92%"], ["28%", "94%"], ["54%", "94%"], ["78%", "93%"], ["94%", "90%"]
+  ];
+  const seedFor = (value) => [...value].reduce((seed, character) => ((seed * 31) + character.charCodeAt(0)) >>> 0, 17);
+  const decorateSlides = () => {
+    slides.forEach((slide) => {
+      const seed = seedFor(slide.id);
+      const used = new Set();
+      slide.querySelectorAll('.decorations img').forEach((image, index) => {
+        let slot = (seed + (index * 5) + (index * index)) % decorationSlots.length;
+        while (used.has(slot)) slot = (slot + 1) % decorationSlots.length;
+        used.add(slot);
+        const [left, top] = decorationSlots[slot];
+        image.style.setProperty('--decor-left', left);
+        image.style.setProperty('--decor-top', top);
+        image.style.setProperty('--decor-rotate', `${((seed >> (index % 8)) + index * 19) % 54 - 27}deg`);
+        image.style.setProperty('--decor-scale', `${0.64 + (((seed + index * 13) % 34) / 100)}`);
+      });
+    });
+  };
+  decorateSlides();
   const previous = document.querySelector('#previous-slide');
   const next = document.querySelector('#next-slide');
   if (!slides.length || !previous || !next) return;

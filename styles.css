@@ -34,13 +34,7 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 /* Six independent, low-contrast decoration slots live only in the slide margins. */
 .slide .decorations{position:absolute;inset:0;z-index:0;pointer-events:none}
 .slide>article,.slide>figure,.slide>.question-map,.slide>.tasknotes{position:relative;z-index:1}
-.decorations img{position:absolute;display:block;width:clamp(24px,3vw,46px);height:clamp(24px,3vw,46px);object-fit:contain;opacity:.2;filter:saturate(.8)}
-.decorations img:nth-child(1){top:14px;left:48%}
-.decorations img:nth-child(2){top:14px;right:28px}
-.decorations img:nth-child(3){bottom:18px;left:28px}
-.decorations img:nth-child(4){bottom:18px;left:48%}
-.decorations img:nth-child(5){bottom:18px;right:28px}
-.decorations img:nth-child(6){top:49%;right:22px}
+.decorations img{position:absolute;left:var(--decor-left);top:var(--decor-top);display:block;width:clamp(24px,3vw,46px);height:clamp(24px,3vw,46px);object-fit:contain;opacity:.2;filter:saturate(.8);transform:translate(-50%,-50%) rotate(var(--decor-rotate)) scale(var(--decor-scale));transform-origin:center}
 
 /* The five-question map is a compact answer key beside its camera relationship. */
 .question-slide{grid-template-columns:minmax(250px,.72fr) minmax(250px,.68fr) minmax(330px,1fr);gap:clamp(18px,3vw,48px)}
