@@ -1,0 +1,7 @@
+const slides=[...document.querySelectorAll('.slide')];let current=0;
+const fill=document.querySelector('#progress-fill'),count=document.querySelector('#slide-count');
+function show(index){current=(index+slides.length)%slides.length;slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));count.textContent=`${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;fill.style.width=`${((current+1)/slides.length)*100}%`;document.title=`${current+1}. ${slides[current].dataset.title} — Computer Vision`;}
+document.querySelector('#next').onclick=()=>show(current+1);document.querySelector('#prev').onclick=()=>show(current-1);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();show(current+1)}if(e.key==='ArrowLeft'){e.preventDefault();show(current-1)}});
+document.querySelector('#run-demo').onclick=()=>{const s=document.querySelector('#run-status');s.textContent='RUNNING…';setTimeout(()=>{s.textContent='RESULT READY';},650)};
+const answers={mask:'Colour mask / thresholding is the best first method.',classify:'Image classification is the best first method.',detect:'Object detection is the best first method.',landmarks:'Hand landmarks are the best first method.'};
+document.querySelectorAll('[data-answer]').forEach(button=>button.onclick=()=>document.querySelector('#quiz-result').textContent=answers[button.dataset.answer]);

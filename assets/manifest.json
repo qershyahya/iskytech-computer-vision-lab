@@ -1,0 +1,17 @@
+{
+  "identity": {
+    "ink": "#000000",
+    "blue": "#158AC2",
+    "orange": "#F68A45",
+    "apricot": "#FEC377",
+    "cream": "#FFDDAD"
+  },
+  "composition": {
+    "elementsPerSlide": 10,
+    "mainIllustration": 1,
+    "conceptCues": 3,
+    "decorations": 6,
+    "overlap": "forbidden"
+  },
+  "assets": []
+}

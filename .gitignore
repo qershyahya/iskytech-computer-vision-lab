@@ -1,0 +1,14 @@
+# Python bytecode and local runtime files
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Do not publish generated previews or temporary videos
+*.avi
+*.mp4

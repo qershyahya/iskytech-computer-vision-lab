@@ -1,0 +1,7 @@
+# Binder uses this file when it builds the public notebook repository.
+# Pin only packages used directly by the five lesson notebooks.
+ultralytics>=8.3,<9
+mediapipe>=0.10,<0.11
+opencv-python-headless>=4.10,<5
+Pillow>=10,<12
+ipython>=8,<10
