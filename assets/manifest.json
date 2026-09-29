@@ -133,6 +133,34 @@
       "slide": "Five questions",
       "subject": "pixel mask blob",
       "status": "generated"
+    },
+    {
+      "file": "classification-image-cat.png",
+      "role": "main illustration",
+      "slide": "Classification lab",
+      "subject": "image card with cat-like silhouette",
+      "status": "generated"
+    },
+    {
+      "file": "classification-cue-ranked-cards.png",
+      "role": "concept cue",
+      "slide": "Classification lab",
+      "subject": "ranked blank cards",
+      "status": "generated"
+    },
+    {
+      "file": "classification-cue-whole-frame.png",
+      "role": "concept cue",
+      "slide": "Classification lab",
+      "subject": "whole-image frame",
+      "status": "generated"
+    },
+    {
+      "file": "classification-cue-category-tile.png",
+      "role": "concept cue",
+      "slide": "Classification lab",
+      "subject": "category tile",
+      "status": "generated"
     }
   ]
 }
