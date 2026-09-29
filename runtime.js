@@ -1,7 +1,14 @@
 (() => {
   const config = window.CV_RUNTIME || {};
-  const valid = config.enabled && config.binderHost && config.githubOwner && config.repository && config.ref;
-  if (!valid) return;
+  const isHostedDeck = location.protocol === 'https:' && location.hostname === 'qershyahya.github.io';
+  const valid = isHostedDeck && config.enabled && config.binderHost && config.githubOwner && config.repository && config.ref;
+  if (!valid) {
+    document.querySelectorAll('[data-notebook]').forEach((panel) => {
+      panel.querySelector('[data-runtime-status]').textContent = 'LIVE WORKSPACE AVAILABLE ON THE HOSTED DECK';
+      panel.querySelector('[data-runtime-copy]').textContent = 'Open the published lesson deck to start the real Binder workspace in this slide.';
+    });
+    return;
+  }
 
   const firstPanel = document.querySelector('[data-notebook]');
   if (!firstPanel) return;
@@ -20,16 +27,22 @@
   parking.append(iframe);
   document.body.append(parking);
   document.body.classList.add('binder-enabled');
-  document.querySelectorAll('[data-notebook]').forEach((panel) => {
-    panel.querySelector('[data-runtime-status]').textContent = 'LIVE WORKSPACE PREPARING';
-    panel.querySelector('[data-runtime-copy]').textContent = 'This shared Binder session starts in the background from slide 1 and appears here automatically.';
-  });
+
+  const setRuntimeText = (status, copy) => {
+    document.querySelectorAll('[data-notebook]').forEach((panel) => {
+      panel.querySelector('[data-runtime-status]').textContent = status;
+      panel.querySelector('[data-runtime-copy]').textContent = copy;
+    });
+  };
+  setRuntimeText('LIVE WORKSPACE STARTING', 'The real Binder workspace is starting once in the background and will appear here automatically.');
+  iframe.addEventListener('load', () => {
+    setRuntimeText('LIVE WORKSPACE', 'The shared Binder workspace is ready in this slide.');
+  }, { once: true });
 
   const showWorkspace = (slide) => {
     const panel = slide?.querySelector('[data-notebook]');
     if (panel) {
       panel.querySelector('[data-runtime-frame]').append(iframe);
-      panel.querySelector('[data-runtime-status]').textContent = 'LIVE WORKSPACE';
       return;
     }
     parking.append(iframe);
