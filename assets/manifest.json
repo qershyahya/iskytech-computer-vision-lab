@@ -72,6 +72,12 @@
       "slide": "Predict failure",
       "subject": "mug half in shadow",
       "status": "generated"
+    },
+    {
+      "file": "decor-light-ray.png",
+      "role": "decoration",
+      "subject": "small light ray",
+      "status": "generated"
     }
   ]
 }
