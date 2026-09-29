@@ -59,6 +59,12 @@
       "role": "decoration",
       "subject": "four pixel squares",
       "status": "generated"
+    },
+    {
+      "file": "decor-crop-corners.png",
+      "role": "decoration",
+      "subject": "crop-corner pair",
+      "status": "generated"
     }
   ]
 }
