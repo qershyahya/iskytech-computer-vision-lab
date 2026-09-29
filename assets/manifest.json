@@ -189,6 +189,34 @@
       "slide": "Detection lab",
       "subject": "confidence gauge",
       "status": "generated"
+    },
+    {
+      "file": "segmentation-boot-boundary.png",
+      "role": "main illustration",
+      "slide": "Segmentation lab",
+      "subject": "boot with exact visible boundary",
+      "status": "generated"
+    },
+    {
+      "file": "segmentation-cue-pixels.png",
+      "role": "concept cue",
+      "slide": "Segmentation lab",
+      "subject": "pixel cluster",
+      "status": "generated"
+    },
+    {
+      "file": "segmentation-cue-boundary-ribbon.png",
+      "role": "concept cue",
+      "slide": "Segmentation lab",
+      "subject": "boundary ribbon",
+      "status": "generated"
+    },
+    {
+      "file": "segmentation-cue-overlap.png",
+      "role": "concept cue",
+      "slide": "Segmentation lab",
+      "subject": "overlap silhouette",
+      "status": "generated"
     }
   ]
 }
