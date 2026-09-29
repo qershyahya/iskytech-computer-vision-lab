@@ -78,6 +78,12 @@
       "role": "decoration",
       "subject": "small light ray",
       "status": "generated"
+    },
+    {
+      "file": "decor-camera-field.png",
+      "role": "decoration",
+      "subject": "curved camera-field line",
+      "status": "generated"
     }
   ]
 }
