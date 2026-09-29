@@ -84,6 +84,27 @@
       "role": "decoration",
       "subject": "curved camera-field line",
       "status": "generated"
+    },
+    {
+      "file": "failure-cue-glare.png",
+      "role": "concept cue",
+      "slide": "Predict failure",
+      "subject": "glare ray",
+      "status": "generated"
+    },
+    {
+      "file": "failure-cue-blue-mug.png",
+      "role": "concept cue",
+      "slide": "Predict failure",
+      "subject": "blue mug",
+      "status": "generated"
+    },
+    {
+      "file": "failure-cue-yellow-notebook.png",
+      "role": "concept cue",
+      "slide": "Predict failure",
+      "subject": "yellow notebook",
+      "status": "generated"
     }
   ]
 }
