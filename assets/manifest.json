@@ -273,6 +273,34 @@
       "slide": "Tracking lab",
       "subject": "three consecutive video frames",
       "status": "generated"
+    },
+    {
+      "file": "atlas-camera-questions.png",
+      "role": "main illustration",
+      "slide": "Task atlas",
+      "subject": "camera linking to five questions",
+      "status": "generated"
+    },
+    {
+      "file": "atlas-cue-category-card.png",
+      "role": "concept cue",
+      "slide": "Task atlas",
+      "subject": "whole image category card",
+      "status": "generated"
+    },
+    {
+      "file": "atlas-cue-detection-box.png",
+      "role": "concept cue",
+      "slide": "Task atlas",
+      "subject": "object detection box",
+      "status": "generated"
+    },
+    {
+      "file": "atlas-cue-pixel-point.png",
+      "role": "concept cue",
+      "slide": "Task atlas",
+      "subject": "pixel mask with point",
+      "status": "generated"
     }
   ]
 }
