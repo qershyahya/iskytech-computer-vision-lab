@@ -55,3 +55,7 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 /* Classification uses a whole-image card and three small output cues. */
 .classification-visual{display:grid;gap:12px;align-content:center}
 .classification-visual .main-asset{max-height:39vh;object-fit:contain;border:0;border-radius:0;background:transparent}
+
+/* Detection shows distinct objects before boxes, tags, and score cues. */
+.detection-visual{display:grid;gap:12px;align-content:center}
+.detection-visual .main-asset{max-height:39vh;object-fit:contain;border:0;border-radius:0;background:transparent}

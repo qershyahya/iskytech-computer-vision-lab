@@ -161,6 +161,34 @@
       "slide": "Classification lab",
       "subject": "category tile",
       "status": "generated"
+    },
+    {
+      "file": "detection-three-objects.png",
+      "role": "main illustration",
+      "slide": "Detection lab",
+      "subject": "three separate desk objects",
+      "status": "generated"
+    },
+    {
+      "file": "detection-cue-box-corner.png",
+      "role": "concept cue",
+      "slide": "Detection lab",
+      "subject": "bounding-box corner",
+      "status": "generated"
+    },
+    {
+      "file": "detection-cue-object-tag.png",
+      "role": "concept cue",
+      "slide": "Detection lab",
+      "subject": "blank object tag",
+      "status": "generated"
+    },
+    {
+      "file": "detection-cue-confidence-gauge.png",
+      "role": "concept cue",
+      "slide": "Detection lab",
+      "subject": "confidence gauge",
+      "status": "generated"
     }
   ]
 }
