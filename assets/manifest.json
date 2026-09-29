@@ -53,6 +53,12 @@
       "slide": "Mission: find the yellow mug",
       "subject": "target ring",
       "status": "generated"
+    },
+    {
+      "file": "decor-pixel-squares.png",
+      "role": "decoration",
+      "subject": "four pixel squares",
+      "status": "generated"
     }
   ]
 }
