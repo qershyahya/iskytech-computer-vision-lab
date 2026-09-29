@@ -13,5 +13,18 @@
     "decorations": 6,
     "overlap": "forbidden"
   },
-  "assets": []
+  "assets": [
+    {
+      "file": "decor-lens-pixels.png",
+      "role": "decoration",
+      "subject": "lens with three pixels",
+      "status": "generated"
+    },
+    {
+      "file": "decor-image-tiles.png",
+      "role": "decoration",
+      "subject": "three image tiles",
+      "status": "generated"
+    }
+  ]
 }
