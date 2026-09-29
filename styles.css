@@ -9,3 +9,10 @@
 /* Lab slides have more live-runtime controls: anchor them inside the viewport instead of centering a tall column. */
 .lab-detail{align-items:start}
 
+
+/* Binder begins once and stays in one browser context; moving the iframe does not start another server. */
+#binder-parking{position:fixed;inline-size:1px;block-size:1px;overflow:hidden;opacity:0;pointer-events:none;inset:auto auto 0 0}
+.live-binder-frame{display:block;width:100%;height:100%;border:0;background:var(--paper)}
+.binder-enabled .launch-notebook,.binder-enabled .runtime-actions{display:none}
+.binder-enabled .runtime-frame{position:fixed;z-index:50;inset:0;display:block;min-height:0;margin:0;border:0;border-radius:0;background:var(--paper)}
+#deck-controls{z-index:60}

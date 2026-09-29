@@ -7,9 +7,11 @@
   const indexForHash = () => slides.findIndex((slide) => `#${slide.id}` === location.hash);
   const show = (index) => {
     const safeIndex = (index + slides.length) % slides.length;
-    slides.forEach((slide, itemIndex) => slide.classList.toggle('active', itemIndex === safeIndex));
+    const slide = slides[safeIndex];
+    slides.forEach((item, itemIndex) => item.classList.toggle('active', itemIndex === safeIndex));
     previous.disabled = safeIndex === 0;
     next.disabled = safeIndex === slides.length - 1;
+    window.dispatchEvent(new CustomEvent('deck:slidechange', { detail: { slide, index: safeIndex } }));
   };
   const current = () => Math.max(0, indexForHash());
   const go = (delta) => {
