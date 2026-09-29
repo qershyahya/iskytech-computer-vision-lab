@@ -41,3 +41,13 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 .decorations img:nth-child(4){bottom:18px;left:48%}
 .decorations img:nth-child(5){bottom:18px;right:28px}
 .decorations img:nth-child(6){top:49%;right:22px}
+
+/* The five-question map is a compact answer key beside its camera relationship. */
+.question-slide{grid-template-columns:minmax(250px,.72fr) minmax(250px,.68fr) minmax(330px,1fr);gap:clamp(18px,3vw,48px)}
+.question-visual{display:grid;gap:10px;align-content:center}
+.question-visual .main-asset{max-height:35vh;object-fit:contain;border:0;border-radius:0;background:transparent}
+.question-visual .asset-cues{gap:7px}
+.question-visual .asset-cues img{height:52px}
+.question-slide .question-map{grid-template-columns:1fr 1fr;align-self:center}
+.question-slide .question-map div{padding:10px}
+.question-slide .question-map div:last-child{grid-column:1/-1}

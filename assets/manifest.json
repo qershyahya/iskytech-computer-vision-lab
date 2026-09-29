@@ -105,6 +105,34 @@
       "slide": "Predict failure",
       "subject": "yellow notebook",
       "status": "generated"
+    },
+    {
+      "file": "questions-camera-rays.png",
+      "role": "main illustration",
+      "slide": "Five questions",
+      "subject": "camera with five view rays",
+      "status": "generated"
+    },
+    {
+      "file": "questions-cue-label-tag.png",
+      "role": "concept cue",
+      "slide": "Five questions",
+      "subject": "blank label tag",
+      "status": "generated"
+    },
+    {
+      "file": "questions-cue-location-pin.png",
+      "role": "concept cue",
+      "slide": "Five questions",
+      "subject": "location pin",
+      "status": "generated"
+    },
+    {
+      "file": "questions-cue-pixel-mask.png",
+      "role": "concept cue",
+      "slide": "Five questions",
+      "subject": "pixel mask blob",
+      "status": "generated"
     }
   ]
 }
