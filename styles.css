@@ -25,3 +25,8 @@
 .mission-visual .main-asset{max-height:43vh;object-fit:contain;border:0;border-radius:0;background:transparent}
 .asset-cues{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:center}
 .asset-cues img{display:block;width:100%;height:78px;object-fit:contain;border:0;background:transparent}
+
+/* The live lab owns exactly one viewport; no ancestor may acquire a page scrollbar. */
+html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
+.binder-enabled .runtime-frame{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;min-height:0!important;max-height:100dvh!important;overflow:hidden!important}
+.binder-enabled .runtime-frame .live-binder-frame{display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;border:0!important}
