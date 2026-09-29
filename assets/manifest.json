@@ -217,6 +217,34 @@
       "slide": "Segmentation lab",
       "subject": "overlap silhouette",
       "status": "generated"
+    },
+    {
+      "file": "landmarks-pinch-hand.png",
+      "role": "main illustration",
+      "slide": "Landmarks lab",
+      "subject": "pinch hand with one marked landmark",
+      "status": "generated"
+    },
+    {
+      "file": "landmarks-cue-fingertip.png",
+      "role": "concept cue",
+      "slide": "Landmarks lab",
+      "subject": "fingertip point",
+      "status": "generated"
+    },
+    {
+      "file": "landmarks-cue-joint-chain.png",
+      "role": "concept cue",
+      "slide": "Landmarks lab",
+      "subject": "joint chain",
+      "status": "generated"
+    },
+    {
+      "file": "landmarks-cue-coordinate.png",
+      "role": "concept cue",
+      "slide": "Landmarks lab",
+      "subject": "coordinate crosshair",
+      "status": "generated"
     }
   ]
 }
