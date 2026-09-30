@@ -32,6 +32,33 @@
     });
   };
   decorateSlides();
+
+  // Put the related visual evidence inside the card that explains it.
+  const attachCardVisuals = () => {
+    slides.forEach((slide) => {
+      const cueImages = [...slide.querySelectorAll('figure .asset-cues img')];
+      const cards = [...slide.querySelectorAll('article .facts p, article .deep p, article .grid p, article ol li, .question-map > div, .tasknotes p')];
+      if (!cueImages.length || !cards.length) return;
+      cards.forEach((card, index) => {
+        const cue = cueImages[index % cueImages.length];
+        const visual = document.createElement('img');
+        visual.className = 'card-visual';
+        visual.src = cue.currentSrc || cue.src;
+        visual.alt = '';
+        visual.setAttribute('aria-hidden', 'true');
+        card.append(visual);
+      });
+      cueImages[0].closest('.asset-cues')?.remove();
+    });
+  };
+  attachCardVisuals();
+  document.querySelectorAll('.prediction-pair').forEach((pair) => {
+    const card = pair.querySelector('p');
+    const visual = pair.querySelector('img');
+    if (card && visual) card.append(visual);
+    pair.querySelector('span')?.remove();
+  });
+
   const previous = document.querySelector('#previous-slide');
   const next = document.querySelector('#next-slide');
   if (!slides.length || !previous || !next) return;

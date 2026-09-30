@@ -135,3 +135,25 @@ figcaption{font-size:clamp(13px,1vw,16px);}
 /* The atlas has a three-item grid; align its task cards with the camera network explicitly. */
 .atlas .task-atlas-visual{transform:translateY(277px);}
 .atlas .tasknotes{transform:translateY(-190px);}
+
+
+/* Related evidence belongs inside the card that introduces it. */
+.facts p,.deep p,.grid p,ol li,.tasknotes p,.question-map div{display:flex;flex-direction:column;min-height:clamp(150px,18vh,188px);}
+.card-visual{display:block;width:clamp(48px,5vw,76px);height:clamp(40px,4.5vw,66px);margin:auto 0 0 auto;object-fit:contain;border:0!important;border-radius:0!important;background:transparent!important;aspect-ratio:auto!important;}
+.question-map div{min-height:clamp(116px,13vh,140px);}
+.question-map div:last-child{min-height:clamp(100px,11vh,124px);}
+.tasknotes p{min-height:clamp(142px,16vh,172px);}
+ol li{min-height:clamp(150px,18vh,188px);}
+
+/* Decorations stay in a separate perimeter frame, never over the teaching surface. */
+.slide .decorations{display:block!important;inset:0;padding:54px;overflow:hidden;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;}
+
+
+/* Prediction evidence is part of the prediction card, not a detached target. */
+.prediction-pair{display:block;}
+.prediction-pair>img,.prediction-pair>span{display:none;}
+.prediction-pair p{display:flex;flex-direction:column;min-height:132px;}
+.prediction-pair p img{display:block;width:66px;height:58px;margin:auto 0 0 auto;object-fit:contain;}
+
+/* White PNG mattes blend into the outer canvas while the coloured pattern remains visible. */
+.decorations img{mix-blend-mode:multiply;}
