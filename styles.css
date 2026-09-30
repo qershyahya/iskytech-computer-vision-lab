@@ -120,3 +120,18 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 
 /* Card-driven concept slides share one baseline with their main illustration. */
 #s5>figure,#s6>figure,#s7>figure,#s8>figure,#s9>figure,#s10>figure,#s11>figure,#s12>figure{align-self:end;}
+
+/* Keep the teaching surface clear: decorative assets are disabled until a dedicated margin exists. */
+.slide .decorations{display:none!important;}
+
+/* Align each visual’s centreline with the card system beside it. */
+.failure-slide .failure-visual{transform:translateY(-32px);}
+.question-slide .question-visual{transform:translateY(30px);}
+.lab-detail>figure{transform:translateY(-26px);}
+.atlas .task-atlas-visual{transform:translateY(72px);}
+figcaption{font-size:clamp(13px,1vw,16px);}
+
+
+/* The atlas has a three-item grid; align its task cards with the camera network explicitly. */
+.atlas .task-atlas-visual{transform:translateY(277px);}
+.atlas .tasknotes{transform:translateY(-190px);}
