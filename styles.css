@@ -68,3 +68,5 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 
 
 .method-visual{display:grid;gap:10px;align-content:center}.method-visual .main-asset{max-height:33vh;object-fit:contain;border:0;background:transparent}.method-visual .asset-cues img{height:52px}
+
+.evidence-visual{display:grid;gap:10px;align-content:center}.evidence-visual .main-asset{max-height:28vh;object-fit:contain;border:0;background:transparent}.evidence-visual .asset-cues img{height:46px}
