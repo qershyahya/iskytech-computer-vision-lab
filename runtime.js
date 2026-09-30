@@ -13,11 +13,12 @@
   const firstPanel = document.querySelector('[data-notebook]');
   if (!firstPanel) return;
   const repositoryPath = `${config.githubOwner}/${config.repository}/${config.ref}`;
-  const firstNotebook = firstPanel.dataset.notebook;
-  const binderUrl = `${config.binderHost}/v2/gh/${repositoryPath}?urlpath=lab/tree/${encodeURIComponent(firstNotebook)}`;
+  const binderUrlFor = (notebook) => `${config.binderHost}/v2/gh/${repositoryPath}?urlpath=lab/tree/${encodeURIComponent(notebook)}`;
+  const initialPanel = document.querySelector('.slide.active [data-notebook]') || firstPanel;
+  let activeNotebook = initialPanel.dataset.notebook;
   const iframe = document.createElement('iframe');
   iframe.className = 'live-binder-frame';
-  iframe.src = binderUrl;
+  iframe.src = binderUrlFor(activeNotebook);
   iframe.title = 'Live computer-vision notebook workspace';
   iframe.allow = 'clipboard-read; clipboard-write';
   iframe.loading = 'eager';
@@ -42,6 +43,12 @@
   const showWorkspace = (slide) => {
     const panel = slide?.querySelector('[data-notebook]');
     if (panel) {
+      const requestedNotebook = panel.dataset.notebook;
+      if (requestedNotebook !== activeNotebook) {
+        activeNotebook = requestedNotebook;
+        iframe.src = binderUrlFor(activeNotebook);
+        setRuntimeText('LIVE WORKSPACE SWITCHING', 'Opening this lab notebook in the shared Binder workspace.');
+      }
       panel.querySelector('[data-runtime-frame]').append(iframe);
       return;
     }
