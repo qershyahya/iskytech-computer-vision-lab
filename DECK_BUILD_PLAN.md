@@ -99,45 +99,14 @@ This creates 68 lesson-specific assets: 17 main illustrations and 51 concept cue
 
 No asset generation begins until the following instructional copy and runtime plan have been installed in the project.
 
-## Notebook runtime: Binder + Colab
+## Notebook access: Google Colab + download
 
-### What can be embedded
+The current deck deliberately does not embed a remote notebook runtime. Each of the five lab slides has two real actions:
 
-A real Binder session can be embedded only after these conditions are true:
+1. **Run in Google Colab** opens that exact public GitHub notebook in Colab.
+2. **Download notebook** downloads the same `.ipynb` file from this repository.
 
-1. The notebooks and Binder configuration are in a **public Git repository**.
-2. MyBinder successfully builds that repository.
-3. The returned Binder URL loads in an iframe in the deck.
-4. A launch test confirms that the actual Jupyter interface, kernel, and notebook are visible and runnable.
-
-The target live URL format is:
-
-```text
-https://mybinder.org/v2/gh/<github-owner>/<repository>/<commit>?urlpath=lab/tree/notebooks/<notebook>.ipynb
-```
-
-The deck will use this URL only after the live test succeeds. Until then, it shows a clearly labelled disabled runtime status plus working **Download notebook** and **Open in Colab** links. It will not show an iframe pretending to execute code.
-
-### Runtime repository structure
-
-```text
-computer-vision-notebooks/
-├── binder/
-│   └── requirements.txt
-├── notebooks/
-│   ├── 01_classification_what_is_in_the_image.ipynb
-│   ├── 02_detection_where_are_the_objects.ipynb
-│   ├── 03_segmentation_which_pixels_belong_to_it.ipynb
-│   ├── 04_landmarks_where_are_the_key_points.ipynb
-│   └── 05_tracking_where_did_the_object_move.ipynb
-└── README.md
-```
-
-`binder/requirements.txt` will pin only the packages required by the five notebooks: `ultralytics`, `mediapipe`, `opencv-python-headless`, `Pillow`, and `ipython`.
-
-### Operational limit
-
-MyBinder is suitable for a classroom demo, not a guaranteed hosted product: it uses public repositories, has no persistent storage, culls inactive sessions after roughly ten minutes, and offers 1–2 GB RAM. The Ultralytics notebooks are the riskiest within that limit. The deck therefore retains Colab as the robust alternative for heavier model runs. Binder’s own usage guidance documents the public, temporary nature of sessions and the resource limits: [Binder usage guidelines](https://mybinder.readthedocs.io/en/latest/about/user-guidelines.html). Binder supports links that open a specified notebook in JupyterLab: [Binder launch documentation](https://mybinder.readthedocs.io/en/latest/howto/launch.html).
+This keeps the presentation in one stable desktop viewport and preserves the lesson flow between labs. A live embedded runtime can be reconsidered later only after it can be verified as reliable within an iframe.
 
 ## Instructional copy
 
