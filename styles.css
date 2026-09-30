@@ -182,3 +182,15 @@ figure img.main-asset{width:100%;max-height:min(50vh,460px);object-fit:contain;}
 .slide .decorations{padding:0;-webkit-mask:none;mask:none;z-index:0;}
 .slide::after{z-index:1;box-shadow:none;background:radial-gradient(ellipse 106% 108% at center,var(--canvas) 52%,rgba(238,243,240,0) 88%);}
 .slide>article,.slide>figure,.slide>.question-map,.slide>.tasknotes{z-index:2;}
+
+/* Decoration-safe teaching zones: every content block clears its own soft canvas space. */
+.slide::after{display:none;}
+.slide .decorations{padding:0;overflow:hidden;z-index:0;}
+.decorations img{opacity:.88;}
+.slide>article,.slide>figure,.slide>.question-map,.slide>.tasknotes{position:relative;z-index:2;isolation:isolate;}
+.slide>article::before,.slide>figure::before,.slide>.question-map::before,.slide>.tasknotes::before{content:'';position:absolute;z-index:-1;pointer-events:none;inset:-56px;background:radial-gradient(ellipse at center,var(--canvas) 42%,rgba(238,243,240,.86) 62%,rgba(238,243,240,0) 100%);}
+.slide>figure::before{inset:-64px -88px;}
+.facts p,.deep p,.grid p,ol li,.tasknotes p,.question-map div,.prediction-pair p{box-shadow:0 0 30px 18px var(--canvas);}
+
+/* Navigation receives the same quiet space as the teaching cards. */
+.deck-arrow{box-shadow:0 0 22px 14px var(--canvas);}
