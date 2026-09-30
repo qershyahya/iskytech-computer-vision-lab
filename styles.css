@@ -194,3 +194,11 @@ figure img.main-asset{width:100%;max-height:min(50vh,460px);object-fit:contain;}
 
 /* Navigation receives the same quiet space as the teaching cards. */
 .deck-arrow{box-shadow:0 0 22px 14px var(--canvas);}
+
+/* Each teaching block is fully canvas-solid inside its own bounds, then fades only outward. */
+.slide>article::before,.slide>figure::before,.slide>.question-map::before,.slide>.tasknotes::before{inset:0;background:var(--canvas);box-shadow:0 0 58px 38px var(--canvas);}
+.slide>figure::before{inset:0;}
+
+/* Circular, seamless clearings: solid at the teaching block, transparent by the outer edge. */
+.slide>article::before,.slide>figure::before,.slide>.question-map::before,.slide>.tasknotes::before{inset:-96px -112px;box-shadow:none;background:radial-gradient(ellipse 68% 72% at center,var(--canvas) 0%,var(--canvas) 52%,rgba(238,243,240,.82) 68%,rgba(238,243,240,0) 100%);}
+.slide>figure::before{inset:-112px -132px;}
