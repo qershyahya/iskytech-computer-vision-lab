@@ -6,10 +6,12 @@
     ["5%", "92%"], ["28%", "94%"], ["54%", "94%"], ["78%", "93%"], ["94%", "90%"]
   ];
   const decorationLibrary = [
-    "assets/decor-lens-pixels.png", "assets/decor-image-tiles.png", "assets/decor-pixel-squares.png",
-    "assets/decor-crop-corners.png", "assets/decor-light-ray.png", "assets/decor-camera-field.png",
-    "assets/decor-confidence-gauge.png", "assets/decor-magnifier-pixels.png", "assets/decor-target-mug.png",
-    "assets/decor-dot-trail.png"
+    "assets/decor-lens-pixels.png", "assets/decor-magnifier-pixels.png", "assets/decor-image-tiles.png",
+    "assets/decor-pixel-squares.png", "assets/decor-camera-field.png", "assets/decor-light-ray.png",
+    "assets/decor-crop-corners.png", "assets/decor-confidence-gauge.png", "assets/decor-target-mug.png",
+    "assets/decor-dot-trail.png", "assets/decor-corner-grid.png", "assets/decor-overlap-circles.png",
+    "assets/decor-motion-arrows.png", "assets/decor-landmark-constellation.png", "assets/decor-mask-blob.png",
+    "assets/decor-binary-tiles.png", "assets/decor-camera-body.png", "assets/decor-error-spark.png"
   ];
   const seedFor = (value) => [...value].reduce((seed, character) => ((seed * 31) + character.charCodeAt(0)) >>> 0, 17);
   const decorateSlides = () => {
