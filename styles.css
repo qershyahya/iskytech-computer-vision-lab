@@ -72,3 +72,5 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 .evidence-visual{display:grid;gap:10px;align-content:center}.evidence-visual .main-asset{max-height:28vh;object-fit:contain;border:0;background:transparent}.evidence-visual .asset-cues img{height:46px}
 
 .failure-test-visual{display:grid;gap:10px;align-content:center}.failure-test-visual .main-asset{max-height:30vh;object-fit:contain;border:0;background:transparent}.failure-test-visual .asset-cues img{height:46px}
+
+.confidence-visual{display:grid;gap:10px;align-content:center}.confidence-visual .main-asset{max-height:30vh;object-fit:contain;border:0;background:transparent}.confidence-visual .asset-cues img{height:46px}
