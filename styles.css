@@ -114,4 +114,9 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 .facts p:not(:last-child)::after,.deep p:not(:last-child)::after,.grid p:not(:last-child)::after,ol li:not(:last-child)::after{right:-12px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:11px solid var(--blue);border-right:0;background:transparent;transform:translateY(-50%)}
 
 /* Decorative patterns are intentionally prominent, while the teaching content stays above them. */
-.decorations img{width:clamp(76px,7.2vw,132px);height:clamp(76px,7.2vw,132px);opacity:.76;filter:saturate(1);}
+.decorations img{width:clamp(304px,28.8vw,528px);height:clamp(304px,28.8vw,528px);opacity:.92;filter:saturate(1);}
+/* Match the failure-model illustration to the vertical centre of its prediction-card group. */
+.failure-slide .failure-visual{align-self:end;}
+
+/* Card-driven concept slides share one baseline with their main illustration. */
+#s5>figure,#s6>figure,#s7>figure,#s8>figure,#s9>figure,#s10>figure,#s11>figure,#s12>figure{align-self:end;}

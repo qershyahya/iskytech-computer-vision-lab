@@ -1,11 +1,11 @@
 (() => {
   const slides = [...document.querySelectorAll('.slide')];
   const decorationSlots = [
-    ["4%", "4%"], ["24%", "3%"], ["48%", "3%"], ["72%", "4%"], ["94%", "6%"],
-    ["3%", "28%"], ["97%", "31%"], ["3%", "60%"], ["97%", "65%"],
-    ["5%", "92%"], ["28%", "94%"], ["54%", "94%"], ["78%", "93%"], ["94%", "90%"]
-  ];
-  const decorationLibrary = [
+    ["53%", "5%"], ["74%", "6%"], ["95%", "9%"],
+    ["3%", "25%"], ["98%", "27%"], ["-7%", "55%"], ["98%", "58%"],
+    ["6%", "86%"], ["28%", "89%"], ["52%", "91%"], ["76%", "89%"], ["96%", "86%"],
+    ["47%", "76%"], ["67%", "73%"], ["60%", "19%"]
+  ]; const decorationLibrary = [
     "assets/decor-lens-pixels.png", "assets/decor-magnifier-pixels.png", "assets/decor-image-tiles.png",
     "assets/decor-pixel-squares.png", "assets/decor-camera-field.png", "assets/decor-light-ray.png",
     "assets/decor-crop-corners.png", "assets/decor-confidence-gauge.png", "assets/decor-target-mug.png",
@@ -27,7 +27,7 @@
         image.style.setProperty('--decor-left', left);
         image.style.setProperty('--decor-top', top);
         image.style.setProperty('--decor-rotate', `${((seed >> (index % 8)) + index * 19) % 54 - 27}deg`);
-        image.style.setProperty('--decor-scale', `${0.64 + (((seed + index * 13) % 34) / 100)}`);
+        image.style.setProperty('--decor-scale', `${0.70 + (((seed + index * 13) % 39) / 100)}`);
       });
     });
   };
