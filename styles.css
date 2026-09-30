@@ -81,3 +81,5 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 .design-visual{display:grid;gap:10px;align-content:center}.design-visual .main-asset{max-height:30vh;object-fit:contain;border:0;background:transparent}.design-visual .asset-cues img{height:46px}
 /* Exit ticket: a single three-stage learning relationship plus three independent reminders. */
 .exit-visual{display:grid;gap:10px;align-content:center}.exit-visual .main-asset{max-height:30vh;object-fit:contain;border:0;background:transparent}.exit-visual .asset-cues img{height:46px}
+/* The active Binder frame must escape the article stacking context, otherwise lesson artwork can cover the real notebook. */
+.binder-enabled .lab-detail>article{z-index:auto}
