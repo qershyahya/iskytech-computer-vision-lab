@@ -177,3 +177,8 @@ figure img.main-asset{width:100%;max-height:min(50vh,460px);object-fit:contain;}
 /* Use each card's remaining space for its linked visual without crowding the copy. */
 .card-visual{width:min(88%,clamp(72px,6.5vw,98px));height:clamp(58px,5.8vw,82px);}
 .prediction-pair p img{width:min(88%,96px);height:78px;}
+
+/* Decorations remain visible at the outside and fade into the canvas toward the teaching surface. */
+.slide .decorations{padding:0;-webkit-mask:none;mask:none;z-index:0;}
+.slide::after{z-index:1;box-shadow:none;background:radial-gradient(ellipse 106% 108% at center,var(--canvas) 52%,rgba(238,243,240,0) 88%);}
+.slide>article,.slide>figure,.slide>.question-map,.slide>.tasknotes{z-index:2;}
