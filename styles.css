@@ -76,3 +76,6 @@ html,body,#deck{min-height:0;max-height:100dvh;overscroll-behavior:none}
 .confidence-visual{display:grid;gap:10px;align-content:center}.confidence-visual .main-asset{max-height:30vh;object-fit:contain;border:0;background:transparent}.confidence-visual .asset-cues img{height:46px}
 
 .responsible-visual{display:grid;gap:10px;align-content:center}.responsible-visual .main-asset{max-height:30vh;object-fit:contain;border:0;background:transparent}.responsible-visual .asset-cues img{height:46px}
+
+/* Design slide: blueprint first, then independent input/output/test cues. */
+.design-visual{display:grid;gap:10px;align-content:center}.design-visual .main-asset{max-height:30vh;object-fit:contain;border:0;background:transparent}.design-visual .asset-cues img{height:46px}
