@@ -7,300 +7,619 @@
     "cream": "#FFDDAD"
   },
   "composition": {
-    "elementsPerSlide": 10,
+    "elementsPerNonNotebookSlide": 10,
     "mainIllustration": 1,
     "conceptCues": 3,
     "decorations": 6,
     "overlap": "forbidden"
   },
+  "inventory": {
+    "lessonSpecific": 68,
+    "decorations": 18,
+    "total": 86
+  },
   "assets": [
-    {
-      "file": "decor-lens-pixels.png",
-      "role": "decoration",
-      "subject": "lens with three pixels",
-      "status": "generated"
-    },
-    {
-      "file": "decor-image-tiles.png",
-      "role": "decoration",
-      "subject": "three image tiles",
-      "status": "generated"
-    },
-    {
-      "file": "mission-camera-mug.png",
-      "role": "main illustration",
-      "slide": "Mission: find the yellow mug",
-      "subject": "camera observing one mug",
-      "status": "generated"
-    },
-    {
-      "file": "mission-cue-camera.png",
-      "role": "concept cue",
-      "slide": "Mission: find the yellow mug",
-      "subject": "camera",
-      "status": "generated"
-    },
-    {
-      "file": "mission-cue-swatch.png",
-      "role": "concept cue",
-      "slide": "Mission: find the yellow mug",
-      "subject": "yellow color swatch",
-      "status": "generated"
-    },
-    {
-      "file": "mission-cue-target.png",
-      "role": "concept cue",
-      "slide": "Mission: find the yellow mug",
-      "subject": "target ring",
-      "status": "generated"
-    },
-    {
-      "file": "decor-pixel-squares.png",
-      "role": "decoration",
-      "subject": "four pixel squares",
-      "status": "generated"
-    },
-    {
-      "file": "decor-crop-corners.png",
-      "role": "decoration",
-      "subject": "crop-corner pair",
-      "status": "generated"
-    },
-    {
-      "file": "failure-mug-shadow.png",
-      "role": "main illustration",
-      "slide": "Predict failure",
-      "subject": "mug half in shadow",
-      "status": "generated"
-    },
-    {
-      "file": "decor-light-ray.png",
-      "role": "decoration",
-      "subject": "small light ray",
-      "status": "generated"
-    },
-    {
-      "file": "decor-camera-field.png",
-      "role": "decoration",
-      "subject": "curved camera-field line",
-      "status": "generated"
-    },
-    {
-      "file": "failure-cue-glare.png",
-      "role": "concept cue",
-      "slide": "Predict failure",
-      "subject": "glare ray",
-      "status": "generated"
-    },
-    {
-      "file": "failure-cue-blue-mug.png",
-      "role": "concept cue",
-      "slide": "Predict failure",
-      "subject": "blue mug",
-      "status": "generated"
-    },
-    {
-      "file": "failure-cue-yellow-notebook.png",
-      "role": "concept cue",
-      "slide": "Predict failure",
-      "subject": "yellow notebook",
-      "status": "generated"
-    },
-    {
-      "file": "questions-camera-rays.png",
-      "role": "main illustration",
-      "slide": "Five questions",
-      "subject": "camera with five view rays",
-      "status": "generated"
-    },
-    {
-      "file": "questions-cue-label-tag.png",
-      "role": "concept cue",
-      "slide": "Five questions",
-      "subject": "blank label tag",
-      "status": "generated"
-    },
-    {
-      "file": "questions-cue-location-pin.png",
-      "role": "concept cue",
-      "slide": "Five questions",
-      "subject": "location pin",
-      "status": "generated"
-    },
-    {
-      "file": "questions-cue-pixel-mask.png",
-      "role": "concept cue",
-      "slide": "Five questions",
-      "subject": "pixel mask blob",
-      "status": "generated"
-    },
-    {
-      "file": "classification-image-cat.png",
-      "role": "main illustration",
-      "slide": "Classification lab",
-      "subject": "image card with cat-like silhouette",
-      "status": "generated"
-    },
-    {
-      "file": "classification-cue-ranked-cards.png",
-      "role": "concept cue",
-      "slide": "Classification lab",
-      "subject": "ranked blank cards",
-      "status": "generated"
-    },
-    {
-      "file": "classification-cue-whole-frame.png",
-      "role": "concept cue",
-      "slide": "Classification lab",
-      "subject": "whole-image frame",
-      "status": "generated"
-    },
-    {
-      "file": "classification-cue-category-tile.png",
-      "role": "concept cue",
-      "slide": "Classification lab",
-      "subject": "category tile",
-      "status": "generated"
-    },
-    {
-      "file": "detection-three-objects.png",
-      "role": "main illustration",
-      "slide": "Detection lab",
-      "subject": "three separate desk objects",
-      "status": "generated"
-    },
-    {
-      "file": "detection-cue-box-corner.png",
-      "role": "concept cue",
-      "slide": "Detection lab",
-      "subject": "bounding-box corner",
-      "status": "generated"
-    },
-    {
-      "file": "detection-cue-object-tag.png",
-      "role": "concept cue",
-      "slide": "Detection lab",
-      "subject": "blank object tag",
-      "status": "generated"
-    },
-    {
-      "file": "detection-cue-confidence-gauge.png",
-      "role": "concept cue",
-      "slide": "Detection lab",
-      "subject": "confidence gauge",
-      "status": "generated"
-    },
-    {
-      "file": "segmentation-boot-boundary.png",
-      "role": "main illustration",
-      "slide": "Segmentation lab",
-      "subject": "boot with exact visible boundary",
-      "status": "generated"
-    },
-    {
-      "file": "segmentation-cue-pixels.png",
-      "role": "concept cue",
-      "slide": "Segmentation lab",
-      "subject": "pixel cluster",
-      "status": "generated"
-    },
-    {
-      "file": "segmentation-cue-boundary-ribbon.png",
-      "role": "concept cue",
-      "slide": "Segmentation lab",
-      "subject": "boundary ribbon",
-      "status": "generated"
-    },
-    {
-      "file": "segmentation-cue-overlap.png",
-      "role": "concept cue",
-      "slide": "Segmentation lab",
-      "subject": "overlap silhouette",
-      "status": "generated"
-    },
-    {
-      "file": "landmarks-pinch-hand.png",
-      "role": "main illustration",
-      "slide": "Landmarks lab",
-      "subject": "pinch hand with one marked landmark",
-      "status": "generated"
-    },
-    {
-      "file": "landmarks-cue-fingertip.png",
-      "role": "concept cue",
-      "slide": "Landmarks lab",
-      "subject": "fingertip point",
-      "status": "generated"
-    },
-    {
-      "file": "landmarks-cue-joint-chain.png",
-      "role": "concept cue",
-      "slide": "Landmarks lab",
-      "subject": "joint chain",
-      "status": "generated"
-    },
-    {
-      "file": "landmarks-cue-coordinate.png",
-      "role": "concept cue",
-      "slide": "Landmarks lab",
-      "subject": "coordinate crosshair",
-      "status": "generated"
-    },
-    {
-      "file": "tracking-ball-trail.png",
-      "role": "main illustration",
-      "slide": "Tracking lab",
-      "subject": "moving ball shown across three positions",
-      "status": "generated"
-    },
-    {
-      "file": "tracking-cue-id-tag.png",
-      "role": "concept cue",
-      "slide": "Tracking lab",
-      "subject": "anonymous tracking tag",
-      "status": "generated"
-    },
-    {
-      "file": "tracking-cue-occlusion.png",
-      "role": "concept cue",
-      "slide": "Tracking lab",
-      "subject": "occlusion overlap",
-      "status": "generated"
-    },
-    {
-      "file": "tracking-cue-frames.png",
-      "role": "concept cue",
-      "slide": "Tracking lab",
-      "subject": "three consecutive video frames",
-      "status": "generated"
-    },
     {
       "file": "atlas-camera-questions.png",
       "role": "main illustration",
       "slide": "Task atlas",
-      "subject": "camera linking to five questions",
-      "status": "generated"
+      "generationBrief": "atlas camera questions",
+      "status": "generated and integrated"
     },
     {
       "file": "atlas-cue-category-card.png",
       "role": "concept cue",
       "slide": "Task atlas",
-      "subject": "whole image category card",
-      "status": "generated"
+      "generationBrief": "atlas cue category card",
+      "status": "generated and integrated"
     },
     {
       "file": "atlas-cue-detection-box.png",
       "role": "concept cue",
       "slide": "Task atlas",
-      "subject": "object detection box",
-      "status": "generated"
+      "generationBrief": "atlas cue detection box",
+      "status": "generated and integrated"
     },
     {
       "file": "atlas-cue-pixel-point.png",
       "role": "concept cue",
       "slide": "Task atlas",
-      "subject": "pixel mask with point",
-      "status": "generated"
+      "generationBrief": "atlas cue pixel point",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "classification-cue-category-tile.png",
+      "role": "concept cue",
+      "slide": "Classification lab",
+      "generationBrief": "classification cue category tile",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "classification-cue-ranked-cards.png",
+      "role": "concept cue",
+      "slide": "Classification lab",
+      "generationBrief": "classification cue ranked cards",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "classification-cue-whole-frame.png",
+      "role": "concept cue",
+      "slide": "Classification lab",
+      "generationBrief": "classification cue whole frame",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "classification-image-cat.png",
+      "role": "main illustration",
+      "slide": "Classification lab",
+      "generationBrief": "classification image cat",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "confidence-cue-false-negative.png",
+      "role": "concept cue",
+      "slide": "Confidence",
+      "generationBrief": "confidence cue false negative",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "confidence-cue-false-positive.png",
+      "role": "concept cue",
+      "slide": "Confidence",
+      "generationBrief": "confidence cue false positive",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "confidence-cue-threshold.png",
+      "role": "concept cue",
+      "slide": "Confidence",
+      "generationBrief": "confidence cue threshold",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "confidence-gauge-question.png",
+      "role": "main illustration",
+      "slide": "Confidence",
+      "generationBrief": "confidence gauge question",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-binary-tiles.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "binary tiles",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-camera-body.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "camera body",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-camera-field.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "camera field",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-confidence-gauge.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "confidence gauge",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-corner-grid.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "corner grid",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-crop-corners.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "crop corners",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-dot-trail.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "dot trail",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-error-spark.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "error spark",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-image-tiles.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "image tiles",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-landmark-constellation.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "landmark constellation",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-lens-pixels.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "lens pixels",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-light-ray.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "light ray",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-magnifier-pixels.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "magnifier pixels",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-mask-blob.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "mask blob",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-motion-arrows.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "motion arrows",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-overlap-circles.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "overlap circles",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-pixel-squares.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "pixel squares",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "decor-target-mug.png",
+      "role": "decoration",
+      "slide": "Reusable decoration library",
+      "generationBrief": "target mug",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "design-blueprint.png",
+      "role": "main illustration",
+      "slide": "Design then code",
+      "generationBrief": "design blueprint",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "design-cue-fixed-camera.png",
+      "role": "concept cue",
+      "slide": "Design then code",
+      "generationBrief": "design cue fixed camera",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "design-cue-output.png",
+      "role": "concept cue",
+      "slide": "Design then code",
+      "generationBrief": "design cue output",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "design-cue-test.png",
+      "role": "concept cue",
+      "slide": "Design then code",
+      "generationBrief": "design cue test",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "detection-cue-box-corner.png",
+      "role": "concept cue",
+      "slide": "Detection lab",
+      "generationBrief": "detection cue box corner",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "detection-cue-confidence-gauge.png",
+      "role": "concept cue",
+      "slide": "Detection lab",
+      "generationBrief": "detection cue confidence gauge",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "detection-cue-object-tag.png",
+      "role": "concept cue",
+      "slide": "Detection lab",
+      "generationBrief": "detection cue object tag",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "detection-three-objects.png",
+      "role": "main illustration",
+      "slide": "Detection lab",
+      "generationBrief": "detection three objects",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "evidence-cue-check.png",
+      "role": "concept cue",
+      "slide": "Evidence",
+      "generationBrief": "evidence cue check",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "evidence-cue-input.png",
+      "role": "concept cue",
+      "slide": "Evidence",
+      "generationBrief": "evidence cue input",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "evidence-cue-transform.png",
+      "role": "concept cue",
+      "slide": "Evidence",
+      "generationBrief": "evidence cue transform",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "evidence-flow.png",
+      "role": "main illustration",
+      "slide": "Evidence",
+      "generationBrief": "evidence flow",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "exit-cue-interpret.png",
+      "role": "concept cue",
+      "slide": "Exit ticket",
+      "generationBrief": "exit cue interpret",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "exit-cue-see.png",
+      "role": "concept cue",
+      "slide": "Exit ticket",
+      "generationBrief": "exit cue see",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "exit-cue-test.png",
+      "role": "concept cue",
+      "slide": "Exit ticket",
+      "generationBrief": "exit cue test",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "exit-see-interpret-test.png",
+      "role": "main illustration",
+      "slide": "Exit ticket",
+      "generationBrief": "exit see interpret test",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-conditions.png",
+      "role": "main illustration",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure conditions",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-cue-blue-mug.png",
+      "role": "concept cue",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure cue blue mug",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-cue-glare.png",
+      "role": "concept cue",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure cue glare",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-cue-lighting.png",
+      "role": "concept cue",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure cue lighting",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-cue-motion.png",
+      "role": "concept cue",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure cue motion",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-cue-occlusion.png",
+      "role": "concept cue",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure cue occlusion",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-cue-yellow-notebook.png",
+      "role": "concept cue",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure cue yellow notebook",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "failure-mug-shadow.png",
+      "role": "main illustration",
+      "slide": "Predict failure / Failure testing",
+      "generationBrief": "failure mug shadow",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "landmarks-cue-coordinate.png",
+      "role": "concept cue",
+      "slide": "Landmarks lab",
+      "generationBrief": "landmarks cue coordinate",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "landmarks-cue-fingertip.png",
+      "role": "concept cue",
+      "slide": "Landmarks lab",
+      "generationBrief": "landmarks cue fingertip",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "landmarks-cue-joint-chain.png",
+      "role": "concept cue",
+      "slide": "Landmarks lab",
+      "generationBrief": "landmarks cue joint chain",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "landmarks-pinch-hand.png",
+      "role": "main illustration",
+      "slide": "Landmarks lab",
+      "generationBrief": "landmarks pinch hand",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "method-cue-ruler.png",
+      "role": "concept cue",
+      "slide": "Method selection",
+      "generationBrief": "method cue ruler",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "method-cue-threshold.png",
+      "role": "concept cue",
+      "slide": "Method selection",
+      "generationBrief": "method cue threshold",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "method-cue-variation.png",
+      "role": "concept cue",
+      "slide": "Method selection",
+      "generationBrief": "method cue variation",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "method-rules-models.png",
+      "role": "main illustration",
+      "slide": "Method selection",
+      "generationBrief": "method rules models",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "mission-camera-mug.png",
+      "role": "main illustration",
+      "slide": "Mission: find the yellow mug",
+      "generationBrief": "mission camera mug",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "mission-cue-camera.png",
+      "role": "concept cue",
+      "slide": "Mission: find the yellow mug",
+      "generationBrief": "mission cue camera",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "mission-cue-swatch.png",
+      "role": "concept cue",
+      "slide": "Mission: find the yellow mug",
+      "generationBrief": "mission cue swatch",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "mission-cue-target.png",
+      "role": "concept cue",
+      "slide": "Mission: find the yellow mug",
+      "generationBrief": "mission cue target",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "pipeline-chain.png",
+      "role": "main illustration",
+      "slide": "Vision pipeline",
+      "generationBrief": "pipeline chain",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "pipeline-cue-capture.png",
+      "role": "concept cue",
+      "slide": "Vision pipeline",
+      "generationBrief": "pipeline cue capture",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "pipeline-cue-decide.png",
+      "role": "concept cue",
+      "slide": "Vision pipeline",
+      "generationBrief": "pipeline cue decide",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "pipeline-cue-prepare.png",
+      "role": "concept cue",
+      "slide": "Vision pipeline",
+      "generationBrief": "pipeline cue prepare",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "questions-camera-rays.png",
+      "role": "main illustration",
+      "slide": "Five questions",
+      "generationBrief": "questions camera rays",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "questions-cue-label-tag.png",
+      "role": "concept cue",
+      "slide": "Five questions",
+      "generationBrief": "questions cue label tag",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "questions-cue-location-pin.png",
+      "role": "concept cue",
+      "slide": "Five questions",
+      "generationBrief": "questions cue location pin",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "questions-cue-pixel-mask.png",
+      "role": "concept cue",
+      "slide": "Five questions",
+      "generationBrief": "questions cue pixel mask",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "responsible-camera-shield.png",
+      "role": "main illustration",
+      "slide": "Responsible vision",
+      "generationBrief": "responsible camera shield",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "responsible-cue-consent.png",
+      "role": "concept cue",
+      "slide": "Responsible vision",
+      "generationBrief": "responsible cue consent",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "responsible-cue-minimise.png",
+      "role": "concept cue",
+      "slide": "Responsible vision",
+      "generationBrief": "responsible cue minimise",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "responsible-cue-review.png",
+      "role": "concept cue",
+      "slide": "Responsible vision",
+      "generationBrief": "responsible cue review",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "segmentation-boot-boundary.png",
+      "role": "main illustration",
+      "slide": "Segmentation lab",
+      "generationBrief": "segmentation boot boundary",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "segmentation-cue-boundary-ribbon.png",
+      "role": "concept cue",
+      "slide": "Segmentation lab",
+      "generationBrief": "segmentation cue boundary ribbon",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "segmentation-cue-overlap.png",
+      "role": "concept cue",
+      "slide": "Segmentation lab",
+      "generationBrief": "segmentation cue overlap",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "segmentation-cue-pixels.png",
+      "role": "concept cue",
+      "slide": "Segmentation lab",
+      "generationBrief": "segmentation cue pixels",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "tracking-ball-trail.png",
+      "role": "main illustration",
+      "slide": "Tracking lab",
+      "generationBrief": "tracking ball trail",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "tracking-cue-frames.png",
+      "role": "concept cue",
+      "slide": "Tracking lab",
+      "generationBrief": "tracking cue frames",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "tracking-cue-id-tag.png",
+      "role": "concept cue",
+      "slide": "Tracking lab",
+      "generationBrief": "tracking cue id tag",
+      "status": "generated and integrated"
+    },
+    {
+      "file": "tracking-cue-occlusion.png",
+      "role": "concept cue",
+      "slide": "Tracking lab",
+      "generationBrief": "tracking cue occlusion",
+      "status": "generated and integrated"
     }
   ]
 }
