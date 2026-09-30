@@ -157,3 +157,23 @@ ol li{min-height:clamp(150px,18vh,188px);}
 
 /* White PNG mattes blend into the outer canvas while the coloured pattern remains visible. */
 .decorations img{mix-blend-mode:multiply;}
+
+/* A soft canvas fade replaces the hard perimeter cut. */
+.slide{isolation:isolate;justify-content:center;align-content:center;}
+.slide::after{content:'';position:absolute;z-index:0;inset:0;pointer-events:none;box-shadow:inset 0 0 84px 30px var(--canvas);}
+.slide>article,.slide>figure,.slide>.question-map,.slide>.tasknotes{align-self:center;}
+
+/* Centre each main example and scale it to the largest safe teaching size. */
+.slide>figure{justify-self:center;width:min(100%,560px);}
+figure img.main-asset{width:100%;max-height:min(50vh,460px);object-fit:contain;}
+.mission-visual .main-asset,.failure-visual .main-asset{max-height:min(48vh,430px);}
+.classification-visual .main-asset,.detection-visual .main-asset,.segmentation-visual .main-asset,.landmarks-visual .main-asset,.tracking-visual .main-asset{max-height:min(48vh,430px);}
+.failure-slide .failure-visual,.question-slide .question-visual,.lab-detail>figure,.atlas .task-atlas-visual,#s5>figure,#s6>figure,#s7>figure,#s8>figure,#s9>figure,#s10>figure,#s11>figure,#s12>figure{transform:none;align-self:center;}
+
+/* The camera is a neutral input; the card labels now carry the five task meanings. */
+.question-slide .question-map div::before{display:none;}
+
+
+/* Use each card's remaining space for its linked visual without crowding the copy. */
+.card-visual{width:min(88%,clamp(72px,6.5vw,98px));height:clamp(58px,5.8vw,82px);}
+.prediction-pair p img{width:min(88%,96px);height:78px;}
