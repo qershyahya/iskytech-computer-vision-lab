@@ -88,13 +88,12 @@
   });
 
   const previewData = [
-    ['Classification result', 'assets/classification-image-cat.png', 'Top label: cat · confidence 0.92'],
-    ['Detection result', 'assets/detection-three-objects.png', 'Three objects · separate boxes and scores'],
-    ['Segmentation result', 'assets/segmentation-boot-boundary.png', 'Boot mask · exact visible boundary'],
-    ['Landmark result', 'assets/landmarks-pinch-hand.png', 'Fingertips and joints · returned coordinates'],
-    ['Tracking result', 'assets/tracking-ball-trail.png', 'One object ID · followed across frames']
-  ];
-  const questionSlide = document.querySelector('#s3');
+    ['Classification', 'assets/classification-image-cat.png', 'assets/classification-cue-category-tile.png', 'Cat · 0.92 confidence', 'What evidence would make you trust this label?'],
+    ['Detection', 'assets/detection-three-objects.png', 'assets/detection-cue-box-corner.png', '3 objects · separate boxes and scores', 'Which finding would you inspect first if confidence fell?'],
+    ['Segmentation', 'assets/segmentation-boot-boundary.png', 'assets/segmentation-cue-pixels.png', 'Boot mask · exact visible boundary', 'Where would a box lose information that the mask keeps?'],
+    ['Landmarks', 'assets/landmarks-pinch-hand.png', 'assets/landmarks-cue-coordinate.png', 'Fingertips and joints · coordinates', 'Which point is most likely to disappear with occlusion?'],
+    ['Tracking', 'assets/tracking-ball-trail.png', 'assets/tracking-cue-id-tag.png', 'One ID · followed across frames', 'At what moment could this object receive the wrong ID?']
+  ];  const questionSlide = document.querySelector('#s3');
   const questionCards = questionSlide ? [...questionSlide.querySelectorAll('.question-map > div')] : [];
   if (questionSlide && questionCards.length) {
     const preview = document.createElement('aside');
@@ -102,8 +101,8 @@
     preview.setAttribute('aria-live', 'polite');
     questionSlide.append(preview);
     const showPreview = (index) => {
-      const [title, image, result] = previewData[index];
-      preview.innerHTML = `<span>RESULT PREVIEW</span><strong>${title}</strong><img src="${image}" alt=""><p>${result}</p>`;
+      const [title, original, resultImage, result, prompt] = previewData[index];
+      preview.innerHTML = `<span>${title} · QUICK LOOK</span><div class="preview-compare"><section><b>ORIGINAL</b><img src="${original}" alt="Original input"></section><section><b>RESULT</b><img src="${resultImage}" alt="Result cue"><strong>${result}</strong></section></div><p><b>DISCUSS</b>${prompt}</p>`;
       preview.classList.add('is-visible');
     };
     const hidePreview = () => preview.classList.remove('is-visible');
