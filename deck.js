@@ -1,8 +1,6 @@
 (() => {
   const allSlides = [...document.querySelectorAll('.slide')];
-  const sessionIds = ['s1', 's2', 's3', 'lab-detection', 's7', 's9', 's12'];
-  const fullLibrary = new URLSearchParams(location.search).has('full');
-  const slides = fullLibrary ? allSlides : sessionIds.map((id) => document.getElementById(id)).filter(Boolean);
+  const slides = allSlides;
   const decorationSlots = [
     ["53%", "5%"], ["74%", "6%"], ["95%", "9%"],
     ["3%", "25%"], ["98%", "27%"], ["-7%", "55%"], ["98%", "58%"],
@@ -37,21 +35,42 @@
   decorateSlides();
 
   const sessionMeta = {
-    s1: ['0–5 min', 'Frame the job'],
-    s2: ['5–12 min', 'Predict failure'],
-    s3: ['12–20 min', 'Preview all five code paths'],
-    'lab-detection': ['20–35 min', 'Run detection together'],
-    s7: ['35–43 min', 'Read output as evidence'],
-    s9: ['43–48 min', 'Choose a threshold'],
-    s12: ['48–50 min', 'Exit ticket']
+    s1: ['0–3 min', 'Frame the job'],
+    s2: ['3–6 min', 'Predict failure'],
+    s3: ['6–8 min', 'Map the five questions'],
+    'lab-classification': ['8–11 min', 'Preview classification code'],
+    'lab-detection': ['11–17 min', 'Run detection together'],
+    'lab-segmentation': ['17–20 min', 'Preview segmentation code'],
+    'lab-landmarks': ['20–23 min', 'Preview landmark code'],
+    'lab-tracking': ['23–26 min', 'Preview tracking code'],
+    s4: ['26–29 min', 'Compare the five tasks'],
+    s5: ['29–32 min', 'Follow the engineering pattern'],
+    s6: ['32–35 min', 'Choose the method'],
+    s7: ['35–38 min', 'Turn output into evidence'],
+    s8: ['38–41 min', 'Test likely failure'],
+    s9: ['41–44 min', 'Choose a threshold'],
+    s10: ['44–46 min', 'Use vision responsibly'],
+    s11: ['46–49 min', 'Frame a project'],
+    s12: ['49–50 min', 'Exit ticket']
   };
   const sessionBar = document.createElement('aside');
   sessionBar.id = 'session-route';
-  sessionBar.innerHTML = fullLibrary
-    ? '<span>FULL CODE LIBRARY</span><a href="./#s1">50-MINUTE ROUTE</a>'
-    : '<span>50-MINUTE SESSION</span><strong></strong><small></small><a href="?full=1#lab-classification">ALL 5 CODE LABS</a>';
-  document.body.append(sessionBar);
-
+  sessionBar.innerHTML = '<span>50-MINUTE LAB</span><strong></strong><small></small><a href="#lab-classification">CODE NOTEBOOKS</a><button type="button" aria-pressed="true">HIDE TIMER</button>';
+  const timerReveal = document.createElement('button');
+  timerReveal.id = 'session-timer-reveal';
+  timerReveal.type = 'button';
+  timerReveal.textContent = 'SHOW TIMING';
+  document.body.append(sessionBar, timerReveal);
+  const setTimerVisible = (visible) => {
+    document.body.classList.toggle('timer-hidden', !visible);
+    sessionBar.querySelector('button').setAttribute('aria-pressed', String(visible));
+    try { localStorage.setItem('cv-deck-timer-visible', String(visible)); } catch {}
+  };
+  let timerVisible = true;
+  try { timerVisible = localStorage.getItem('cv-deck-timer-visible') !== 'false'; } catch {}
+  setTimerVisible(timerVisible);
+  sessionBar.querySelector('button').addEventListener('click', () => setTimerVisible(false));
+  timerReveal.addEventListener('click', () => setTimerVisible(true));
   // Put the related visual evidence inside the card that explains it.
   const attachCardVisuals = () => {
     slides.forEach((slide) => {
@@ -89,11 +108,9 @@
     slides.forEach((item, itemIndex) => item.classList.toggle('active', itemIndex === safeIndex));
     previous.disabled = safeIndex === 0;
     next.disabled = safeIndex === slides.length - 1;
-    if (!fullLibrary) {
-      const [time, action] = sessionMeta[slide.id] || ['', ''];
-      sessionBar.querySelector('strong').textContent = time;
-      sessionBar.querySelector('small').textContent = action;
-    }
+    const [time, action] = sessionMeta[slide.id] || ['', ''];
+    sessionBar.querySelector('strong').textContent = time;
+    sessionBar.querySelector('small').textContent = action;
     window.dispatchEvent(new CustomEvent('deck:slidechange', { detail: { slide, index: safeIndex } }));
   };
   const current = () => Math.max(0, indexForHash());
