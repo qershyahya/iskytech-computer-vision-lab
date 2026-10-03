@@ -88,12 +88,13 @@
   });
 
   const previewData = [
-    ['Classification', 'assets/classification-image-cat.png', 'assets/classification-cue-category-tile.png', 'Cat · 0.92 confidence', 'What evidence would make you trust this label?'],
-    ['Detection', 'assets/detection-three-objects.png', 'assets/detection-cue-box-corner.png', '3 objects · separate boxes and scores', 'Which finding would you inspect first if confidence fell?'],
-    ['Segmentation', 'assets/segmentation-boot-boundary.png', 'assets/segmentation-cue-pixels.png', 'Boot mask · exact visible boundary', 'Where would a box lose information that the mask keeps?'],
-    ['Landmarks', 'assets/landmarks-pinch-hand.png', 'assets/landmarks-cue-coordinate.png', 'Fingertips and joints · coordinates', 'Which point is most likely to disappear with occlusion?'],
-    ['Tracking', 'assets/tracking-ball-trail.png', 'assets/tracking-cue-id-tag.png', 'One ID · followed across frames', 'At what moment could this object receive the wrong ID?']
-  ];  const questionSlide = document.querySelector('#s3');
+    ['Classification', 'assets/lab-previews/classification-original.webp', 'assets/lab-previews/classification-result.webp', 'Actual top labels from the notebook model', 'Which label would you trust least, and why?'],
+    ['Detection', 'assets/lab-previews/detection-original.webp', 'assets/lab-previews/detection-result.webp', 'Actual YOLO boxes and confidence scores', 'Which finding would you inspect first if confidence fell?'],
+    ['Segmentation', 'assets/lab-previews/segmentation-original.webp', 'assets/lab-previews/segmentation-result.webp', 'Actual YOLO segmentation mask overlay', 'Where would a box lose information that the mask keeps?'],
+    ['Landmarks', 'assets/lab-previews/landmarks-original.webp', 'assets/lab-previews/landmarks-result.webp', 'Actual MediaPipe landmark coordinates', 'Which point is most likely to disappear with occlusion?'],
+    ['Tracking', 'assets/lab-previews/tracking-original.webp', 'assets/lab-previews/tracking-result.webp', 'Actual tracker IDs on a video frame', 'At what moment could this object receive the wrong ID?']
+  ];
+  previewData.forEach(([, original, result]) => [original, result].forEach((src) => { const image = new Image(); image.src = src; }));  const questionSlide = document.querySelector('#s3');
   const questionCards = questionSlide ? [...questionSlide.querySelectorAll('.question-map > div')] : [];
   if (questionSlide && questionCards.length) {
     const preview = document.createElement('aside');
