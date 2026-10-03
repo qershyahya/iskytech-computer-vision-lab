@@ -1,6 +1,7 @@
 (() => {
   const allSlides = [...document.querySelectorAll('.slide')];
-  const slides = allSlides;
+  const sessionIds = ['s1', 's2', 's3', 'lab-detection', 's7', 's9', 's12'];
+  const slides = sessionIds.map((id) => document.getElementById(id)).filter(Boolean);
   const decorationSlots = [
     ["53%", "5%"], ["74%", "6%"], ["95%", "9%"],
     ["3%", "25%"], ["98%", "27%"], ["-7%", "55%"], ["98%", "58%"],
@@ -35,25 +36,14 @@
   decorateSlides();
 
   const sessionMeta = {
-    s1: ['0–3 min', 'Frame the job'],
-    s2: ['3–6 min', 'Predict failure'],
-    s3: ['6–8 min', 'Map the five questions'],
-    'lab-classification': ['8–11 min', 'Preview classification code'],
-    'lab-detection': ['11–17 min', 'Run detection together'],
-    'lab-segmentation': ['17–20 min', 'Preview segmentation code'],
-    'lab-landmarks': ['20–23 min', 'Preview landmark code'],
-    'lab-tracking': ['23–26 min', 'Preview tracking code'],
-    s4: ['26–29 min', 'Compare the five tasks'],
-    s5: ['29–32 min', 'Follow the engineering pattern'],
-    s6: ['32–35 min', 'Choose the method'],
-    s7: ['35–38 min', 'Turn output into evidence'],
-    s8: ['38–41 min', 'Test likely failure'],
-    s9: ['41–44 min', 'Choose a threshold'],
-    s10: ['44–46 min', 'Use vision responsibly'],
-    s11: ['46–49 min', 'Frame a project'],
-    s12: ['49–50 min', 'Exit ticket']
-  };
-  const sessionBar = document.createElement('aside');
+    s1: ['0–5 min', 'Frame the job'],
+    s2: ['5–12 min', 'Predict failure'],
+    s3: ['12–20 min', 'Hover through five results'],
+    'lab-detection': ['20–35 min', 'Run one code lab together'],
+    s7: ['35–43 min', 'Turn output into evidence'],
+    s9: ['43–48 min', 'Choose a threshold'],
+    s12: ['48–50 min', 'Exit ticket']
+  };  const sessionBar = document.createElement('aside');
   sessionBar.id = 'session-route';
   sessionBar.innerHTML = '<span>50-MINUTE LAB</span><strong></strong><small></small><button type="button" aria-pressed="true">HIDE TIMER</button>';
   const timerReveal = document.createElement('button');
@@ -97,6 +87,36 @@
     pair.querySelector('span')?.remove();
   });
 
+  const previewData = [
+    ['Classification result', 'assets/classification-image-cat.png', 'Top label: cat · confidence 0.92'],
+    ['Detection result', 'assets/detection-three-objects.png', 'Three objects · separate boxes and scores'],
+    ['Segmentation result', 'assets/segmentation-boot-boundary.png', 'Boot mask · exact visible boundary'],
+    ['Landmark result', 'assets/landmarks-pinch-hand.png', 'Fingertips and joints · returned coordinates'],
+    ['Tracking result', 'assets/tracking-ball-trail.png', 'One object ID · followed across frames']
+  ];
+  const questionSlide = document.querySelector('#s3');
+  const questionCards = questionSlide ? [...questionSlide.querySelectorAll('.question-map > div')] : [];
+  if (questionSlide && questionCards.length) {
+    const preview = document.createElement('aside');
+    preview.className = 'lab-result-preview';
+    preview.setAttribute('aria-live', 'polite');
+    questionSlide.append(preview);
+    const showPreview = (index) => {
+      const [title, image, result] = previewData[index];
+      preview.innerHTML = `<span>RESULT PREVIEW</span><strong>${title}</strong><img src="${image}" alt=""><p>${result}</p>`;
+      preview.classList.add('is-visible');
+    };
+    const hidePreview = () => preview.classList.remove('is-visible');
+    questionCards.forEach((card, index) => {
+      card.tabIndex = 0;
+      card.setAttribute('aria-label', `${card.textContent.trim()}. Show result preview.`);
+      card.addEventListener('pointerenter', () => showPreview(index));
+      card.addEventListener('pointerleave', hidePreview);
+      card.addEventListener('focus', () => showPreview(index));
+      card.addEventListener('blur', hidePreview);
+      card.addEventListener('click', () => showPreview(index));
+    });
+  }
   const previous = document.querySelector('#previous-slide');
   const next = document.querySelector('#next-slide');
   if (!slides.length || !previous || !next) return;
