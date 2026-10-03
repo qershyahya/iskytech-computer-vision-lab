@@ -55,7 +55,7 @@
   };
   const sessionBar = document.createElement('aside');
   sessionBar.id = 'session-route';
-  sessionBar.innerHTML = '<span>50-MINUTE LAB</span><strong></strong><small></small><a href="#lab-classification">CODE NOTEBOOKS</a><button type="button" aria-pressed="true">HIDE TIMER</button>';
+  sessionBar.innerHTML = '<span>50-MINUTE LAB</span><strong></strong><small></small><button type="button" aria-pressed="true">HIDE TIMER</button>';
   const timerReveal = document.createElement('button');
   timerReveal.id = 'session-timer-reveal';
   timerReveal.type = 'button';
