@@ -1,6 +1,6 @@
 (() => {
   const allSlides = [...document.querySelectorAll('.slide')];
-  const sessionIds = ['s1', 's2', 's3', 'lab-detection', 's7', 's9', 's12'];
+  const sessionIds = ['s1', 's2', 's3', 'lab-detection', 's4', 's8', 's7', 's9', 's10', 's12'];
   const slides = sessionIds.map((id) => document.getElementById(id)).filter(Boolean);
   const decorationSlots = [
     ["53%", "5%"], ["74%", "6%"], ["95%", "9%"],
@@ -36,12 +36,15 @@
   decorateSlides();
 
   const sessionMeta = {
-    s1: ['0–5 min', 'Frame the job'],
-    s2: ['5–12 min', 'Predict failure'],
-    s3: ['12–20 min', 'Hover through five results'],
-    'lab-detection': ['20–35 min', 'Run one code lab together'],
-    s7: ['35–43 min', 'Turn output into evidence'],
-    s9: ['43–48 min', 'Choose a threshold'],
+    s1: ['0–4 min', 'Frame the job'],
+    s2: ['4–8 min', 'Predict failure'],
+    s3: ['8–13 min', 'Preview five results'],
+    'lab-detection': ['13–26 min', 'Run one code lab together'],
+    s4: ['26–30 min', 'Connect the five tasks'],
+    s8: ['30–36 min', 'Stress-test angle, light, motion, and context'],
+    s7: ['36–41 min', 'Turn output into evidence'],
+    s9: ['41–45 min', 'Choose a threshold'],
+    s10: ['45–48 min', 'Use vision responsibly'],
     s12: ['48–50 min', 'Exit ticket']
   };  const sessionBar = document.createElement('aside');
   sessionBar.id = 'session-route';
