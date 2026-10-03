@@ -230,3 +230,10 @@ body.timer-hidden #session-route{display:none}body.timer-hidden #session-timer-r
 
 /* Large real-notebook comparison window: preloaded input on the left, model output on the right. */
 .lab-result-preview{width:min(1025px,72vw);padding:22px;border-radius:22px}.preview-compare{grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.preview-compare section{padding:12px;border-radius:14px}.preview-compare img{height:min(43vh,360px);object-fit:contain}.preview-compare section:last-child img{width:100%;height:min(43vh,360px);margin:0}.preview-compare strong{margin-top:8px;font-size:14px}.lab-result-preview p{margin-top:14px;font-size:14px}@media(max-width:850px){.lab-result-preview{width:min(94vw,720px);padding:15px}.preview-compare{gap:8px}.preview-compare section{padding:7px}.preview-compare img,.preview-compare section:last-child img{height:190px}.lab-result-preview p{font-size:12px}}
+
+/* Prevent the five-question grid from forcing content off-screen at wide browser zoom. */
+.question-slide{grid-template-columns:minmax(0,.82fr) minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(20px,3vw,52px)}
+.question-slide>article,.question-slide>figure,.question-slide>.question-map,.question-map div{min-width:0}.question-map strong{overflow-wrap:anywhere}
+/* Use the exit slide's open canvas for the teaching visual rather than empty space. */
+#s12{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(30px,5vw,86px)}
+#s12 .exit-visual{width:min(100%,760px)}#s12 .exit-visual .main-asset{width:100%;max-height:min(50vh,470px)}
