@@ -1,5 +1,5 @@
 const slides=[...document.querySelectorAll('.slide')];
-const timing=['0–5 min · frame + predict','5–16 min · compare visual evidence','16–28 min · run one controlled change','28–37 min · see five results','37–42 min · record the evidence','42–47 min · find failure points','47–50 min · reflect + exit'];
+const timing=['0–5 min · frame + predict','5–16 min · compare visual evidence','16–28 min · see five results','28–37 min · run one controlled change','37–42 min · record the evidence','42–47 min · find failure points','47–50 min · reflect + exit'];
 let i=Math.max(0,slides.findIndex(s=>`#${s.id}`===location.hash));
 const timer=document.querySelector('#timer span');
 function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,x)=>s.classList.toggle('active',x===i));timer.textContent=timing[i];history.replaceState(null,'',`#${slides[i].id}`);document.querySelector('#prev').disabled=!i;document.querySelector('#next').disabled=i===slides.length-1}
