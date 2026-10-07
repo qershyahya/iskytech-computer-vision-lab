@@ -237,3 +237,12 @@ body.timer-hidden #session-route{display:none}body.timer-hidden #session-timer-r
 /* Use the exit slide's open canvas for the teaching visual rather than empty space. */
 #s12{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(30px,5vw,86px)}
 #s12 .exit-visual{width:min(100%,760px)}#s12 .exit-visual .main-asset{width:100%;max-height:min(50vh,470px)}
+/* Session 01 task atlas: title, camera network, and five questions occupy separate grid zones. */
+#s4.atlas{grid-template-columns:minmax(300px,.78fr) minmax(460px,1.22fr);grid-template-rows:minmax(0,1fr) auto;gap:clamp(20px,3vw,48px) clamp(32px,5vw,78px)}
+#s4.atlas>article{grid-column:1;grid-row:1;align-self:center;max-width:520px}
+#s4.atlas>article h2{max-width:8ch}
+#s4.atlas>.task-atlas-visual{grid-column:2;grid-row:1;align-self:center;justify-self:center;width:min(100%,640px);transform:none!important}
+#s4.atlas>.task-atlas-visual .main-asset{max-height:min(42vh,380px);width:100%}
+#s4.atlas>.tasknotes{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;width:100%;margin:0;transform:none!important}
+#s4.atlas>.tasknotes p{min-height:112px;padding:13px;font-size:13px}
+@media(max-width:850px){#s4.atlas{grid-template-columns:1fr;grid-template-rows:auto}#s4.atlas>.task-atlas-visual,#s4.atlas>.tasknotes{grid-column:1;grid-row:auto}#s4.atlas>.tasknotes{grid-template-columns:1fr 1fr}#s4.atlas>.tasknotes p{min-height:96px}}
