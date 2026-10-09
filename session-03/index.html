@@ -1,9 +1,83 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Session 03 — Drawing and Shapes on Images</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><main id="deck">
-<section class="slide active" id="s1"><article><h1>DRAWING IS<br><em>SYSTEM OUTPUT.</em></h1><p>The camera can already find an object. Today, build the visible layer that tells a person what to do with that finding.</p><div class="exit">One live frame<br>One user action<br>One visible response</div></article><figure class="classification-visual"><img src="../assets/detection-three-objects.png" alt="Objects with visual regions"><figcaption>The new skill is not finding the object. It is communicating the next action clearly.</figcaption></figure></section>
-<section class="slide" id="s2"><article><h2>ADD FIVE<br><em>INTERFACE LAYERS.</em></h2><p>Draw only what helps the user act. The camera frame stays visible beneath every layer.</p><div class="cards"><div><b>GUIDE</b>Target box and centre line.</div><div><b>MEASURE</b>Centroid and distance.</div><div><b>STATE</b>READY, ADJUST, or LOST.</div></div></article><figure class="classification-visual"><img src="../assets/detection-cue-box-corner.png" alt="Box corner visual"><figcaption>Frame, guide, measurement, status, and instruction make one usable visual interface.</figcaption></figure></section>
-<section class="slide" id="s3"><article><h2>TURN A POINT<br><em>INTO A RULE.</em></h2><p>The object’s centroid has x and y coordinates. Compare them with the centre of the target zone, then show the result rather than hiding it.</p><div class="classification-evidence"><div><b>CENTROID</b>The object’s centre point</div><div><b>OFFSET</b>Its distance from the target</div><div><b>TOLERANCE</b>The accepted range</div></div></article><figure class="classification-visual"><img src="../assets/detection-cue-object-tag.png" alt="Object tag visual"><figcaption>A coordinate becomes useful when it produces a visible, understandable decision.</figcaption></figure></section>
-<section class="slide" id="s4"><article><h2>MAKE THE GATE<br><em>WORK LIVE.</em></h2><p>Run the local webcam notebook. It draws the target, centre line, object marker, and status panel onto the incoming frame.</p><div class="actions continue-actions session-action"><a class="continue-colab" href="https://colab.research.google.com/github/qershyahya/iskytech-computer-vision-lab/blob/main/session-03/notebooks/03_drawing_shapes_live_video.ipynb" target="_blank" rel="noopener"><span>NOTEBOOK 03 · LOCAL WEBCAM</span>OPEN THE OVERLAY LAB ↗</a><a class="action secondary" href="notebooks/03_drawing_shapes_live_video.ipynb" download>DOWNLOAD NOTEBOOK ↘</a></div></article><figure class="classification-visual"><img src="../assets/pipeline-chain.png" alt="Vision pipeline visual"><figcaption>Drawing happens after measurement so the user can see what the system is doing.</figcaption></figure></section>
-<section class="slide" id="s5"><article><h2>DESIGN THE<br><em>FEEDBACK STATES.</em></h2><p>A useful interface does more than approve or reject. It says whether to move, capture, or make the object visible again.</p><div class="cards"><div><b>ADJUST</b>Object is visible but outside the tolerance.</div><div><b>READY</b>Object is correctly aligned.</div><div><b>LOST</b>No usable object is visible.</div></div></article><figure class="classification-visual"><img src="../assets/evidence-cue-input.png" alt="Input visual"><figcaption>Each state should name the next action without making the user guess.</figcaption></figure></section>
-<section class="slide" id="s6"><article><h2>TUNE THE<br><em>TOLERANCE.</em></h2><p>Change one tolerance value. Test where the interface changes from ADJUST to READY, then decide whether that boundary is useful for a real user.</p><div class="challenge-note"><b>CODE TASK</b>Change one tolerance value, record the new threshold, and explain whether the gate now approves too early or too late.</div></article><figure class="classification-visual"><img src="../assets/evidence-flow.png" alt="Evidence flow visual"><figcaption>A tolerance is an interface decision: it sets how much positioning error the task accepts.</figcaption></figure></section>
-<section class="slide" id="s7"><article><h2>TEST THE<br><em>INTERFACE.</em></h2><p>Test three positions, then keep evidence about whether the visible feedback matched the real situation.</p><div class="exit">Centred result: ______<br>Off-centre result: ______<br>Lost-object result: ______<br>One unclear case: ______</div><a class="action secondary" href="../session-04/">CONTINUE TO SESSION 04 ↗</a></article><figure class="classification-visual"><img src="../assets/evidence-flow.png" alt="Evidence flow visual"><figcaption>Next: voice or text commands will control a visible vision action.</figcaption></figure></section>
+  <section class="slide active" id="s1">
+    <article>
+      <h1>SHOW THE<br><em>NEXT MOVE.</em></h1>
+      <p>The object finder already gives us a position. The new job is to draw a clear instruction on the live camera frame.</p>
+      <div class="exit">Object position → visual guidance → user action</div>
+    </article>
+    <figure class="gate-figure gate-intro" aria-label="Live camera overlay telling the user to move an orange object right into a target zone">
+      <div class="camera-label">LIVE CAMERA</div><div class="camera-topline"><span>OBJECT: FOUND</span><span>CONFIDENCE 0.94</span></div>
+      <div class="target-zone"><span>TARGET</span><i></i></div><div class="orange-object off-target"></div><div class="movement-arrow">MOVE RIGHT <b>→</b></div>
+      <div class="status-strip adjust"><strong>ADJUST</strong><span>Move the orange object into the blue target.</span></div>
+      <figcaption>The overlay makes a detected position useful to a person.</figcaption>
+    </figure>
+  </section>
+  <section class="slide" id="s2">
+    <article>
+      <h2>ONE FRAME.<br><em>FIVE LAYERS.</em></h2>
+      <p>A good overlay adds only the information needed to act. Each drawn layer has one job.</p>
+      <div class="cards"><div><b>GUIDE</b>Target and centre line</div><div><b>MEASURE</b>Position and offset</div><div><b>STATE</b>What to do next</div></div>
+    </article>
+    <figure class="gate-figure gate-layers" aria-label="Annotated camera overlay showing five interface layers">
+      <div class="camera-label">LIVE CAMERA</div><div class="layer-frame"><span class="layer-dot dot-one">1</span><span class="layer-dot dot-two">2</span><span class="layer-dot dot-three">3</span><span class="layer-dot dot-four">4</span><span class="layer-dot dot-five">5</span><div class="target-zone"><i></i></div><div class="orange-object centred"></div><div class="centre-line"></div><div class="centroid-marker"></div><div class="status-strip ready"><strong>READY</strong><span>Offset 8 px</span></div></div>
+      <ol class="layer-key"><li><b>1</b> Camera frame</li><li><b>2</b> Target zone</li><li><b>3</b> Centre line</li><li><b>4</b> Object centroid</li><li><b>5</b> Status panel</li></ol>
+      <figcaption>The video remains visible; drawings sit on top as a usable interface.</figcaption>
+    </figure>
+  </section>
+  <section class="slide" id="s3">
+    <article>
+      <h2>TURN A POINT<br><em>INTO A RULE.</em></h2>
+      <p>The centroid is a pair of pixel coordinates. Compare it with the target centre and make the decision visible.</p>
+      <div class="classification-evidence"><div><b>CENTROID</b>object centre</div><div><b>OFFSET</b>distance from target</div><div><b>TOLERANCE</b>accepted error</div></div>
+    </article>
+    <figure class="gate-figure gate-math" aria-label="Coordinate example showing the orange object eight pixels from target centre and therefore ready">
+      <div class="coordinate-frame"><span class="axis x-axis">x →</span><span class="axis y-axis">y ↓</span><div class="target-zone"><i></i></div><div class="orange-object centred"></div><div class="centre-line"></div><div class="centroid-marker"></div><span class="coordinate-chip object-chip">object: 312, 178</span><span class="coordinate-chip target-chip">target: 320, 180</span></div>
+      <div class="rule-panel"><div><span>OFFSET</span><strong>8 px</strong></div><b>≤ 24 px</b><div class="rule-result">READY</div></div>
+      <figcaption>The computer measures pixels; the user sees a plain-language decision.</figcaption>
+    </figure>
+  </section>
+  <section class="slide" id="s4">
+    <article>
+      <h2>DRAW THE<br><em>LIVE OUTPUT.</em></h2>
+      <p>In the notebook, draw the guide, mark the measured centre, and write the status directly onto each webcam frame.</p>
+      <div class="actions continue-actions session-action"><a class="continue-colab" href="https://colab.research.google.com/github/qershyahya/iskytech-computer-vision-lab/blob/main/session-03/notebooks/03_drawing_shapes_live_video.ipynb" target="_blank" rel="noopener"><span>NOTEBOOK 03 · LOCAL WEBCAM</span>OPEN THE OVERLAY LAB ↗</a><a class="action secondary" href="notebooks/03_drawing_shapes_live_video.ipynb" download>DOWNLOAD NOTEBOOK ↘</a></div>
+    </article>
+    <figure class="gate-figure gate-build" aria-label="Code instructions producing a visible webcam overlay">
+      <div class="code-window"><span><i>01</i> draw target rectangle</span><span><i>02</i> draw centre line</span><span><i>03</i> mark centroid</span><span><i>04</i> show status text</span></div><b class="build-arrow">→</b><div class="mini-camera"><span>LIVE CAMERA</span><div class="target-zone"><i></i></div><div class="orange-object centred"></div><div class="centre-line"></div><div class="centroid-marker"></div><div class="status-strip ready"><strong>READY</strong><span>Capture frame</span></div></div>
+      <figcaption>Each code block produces a visible layer that the user can inspect.</figcaption>
+    </figure>
+  </section>
+  <section class="slide" id="s5">
+    <article>
+      <h2>NAME THE<br><em>NEXT ACTION.</em></h2>
+      <p>Do not make someone interpret a dot or a number. The status should tell them what to do next.</p>
+      <div class="cards"><div><b>ADJUST</b>Move into the target</div><div><b>READY</b>Capture the frame</div><div><b>LOST</b>Show the object again</div></div>
+    </article>
+    <figure class="gate-figure gate-states" aria-label="Three interface states for adjusted, ready, and lost object">
+      <div class="state-card"><div class="state-view adjust-view"><div class="target-zone"><i></i></div><div class="orange-object off-target"></div></div><b>ADJUST</b><span>Move right</span></div><div class="state-card"><div class="state-view ready-view"><div class="target-zone"><i></i></div><div class="orange-object centred"></div><div class="centroid-marker"></div></div><b>READY</b><span>Capture</span></div><div class="state-card"><div class="state-view lost-view"><div class="target-zone"><i></i></div><em>?</em></div><b>LOST</b><span>Show object</span></div>
+      <figcaption>Three states prevent the user from guessing why the system has not approved the frame.</figcaption>
+    </figure>
+  </section>
+  <section class="slide" id="s6">
+    <article>
+      <h2>TUNE THE<br><em>TOLERANCE.</em></h2>
+      <p>Change one value, then check whether the interface approves a position too early or makes alignment unnecessarily difficult.</p>
+      <div class="challenge-note"><b>CODE TASK</b>Change <code>READY_TOLERANCE</code>. Test the same off-centre object before and after your edit.</div>
+    </article>
+    <figure class="gate-figure gate-tolerance" aria-label="Comparison of strict and loose interface tolerance for the same off-centre object">
+      <div class="tolerance-card"><b>STRICT · 24 PX</b><div class="tolerance-view"><div class="target-zone"><i></i></div><div class="orange-object tolerance-object"></div></div><strong class="adjust">ADJUST</strong><span>35 px away</span></div><div class="tolerance-card"><b>LOOSE · 48 PX</b><div class="tolerance-view"><div class="target-zone loose"><i></i></div><div class="orange-object tolerance-object"></div></div><strong class="ready">READY</strong><span>same 35 px away</span></div>
+      <figcaption>The object did not move. Only the decision rule changed.</figcaption>
+    </figure>
+  </section>
+  <section class="slide" id="s7">
+    <article>
+      <h2>TEST THE<br><em>INTERFACE.</em></h2>
+      <p>Keep evidence about whether the visible feedback matched what actually happened in the camera frame.</p>
+      <div class="exit">Centred result: ______<br>Off-centre result: ______<br>Lost-object result: ______<br>One unclear case: ______</div><a class="action secondary" href="../session-04/">CONTINUE TO SESSION 04 ↗</a>
+    </article>
+    <figure class="gate-figure gate-test" aria-label="Three test scenarios and their expected interface status">
+      <div class="test-result"><div class="test-dot centre-dot"></div><b>CENTRED</b><strong>READY</strong></div><div class="test-result"><div class="test-dot edge-dot"></div><b>OFF-CENTRE</b><strong class="adjust">ADJUST</strong></div><div class="test-result"><div class="test-dot blank-dot">?</div><b>NO OBJECT</b><strong class="lost">LOST</strong></div><div class="evidence-note"><b>WRITE DOWN</b><span>Did the status match the real frame?</span></div>
+      <figcaption>A finished interface needs evidence that its feedback is understandable and correct.</figcaption>
+    </figure>
+  </section>
 </main><aside id="timer"><b>50-MINUTE SESSION</b><span></span><button>HIDE TIMER</button></aside><button id="show-timer">SHOW TIMING</button><nav><button id="prev">←</button><button id="next">→</button></nav><script src="deck.js"></script></body></html>
