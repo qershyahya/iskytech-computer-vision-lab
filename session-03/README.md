@@ -1,3 +1,3 @@
-# Session 03 — Whole-image Classification
+# Session 03 — Drawing and Shapes on Images
 
-A 50-minute 1:1 session on the difference between a whole-image label and object location. The Colab notebook uses a neutral cat image and asks learners to test `TOP_K` before naming the task classification cannot solve.
+A 50-minute 1:1 session on building live-video visual interfaces with OpenCV overlays, ROIs, status panels, guides, and measurements.
