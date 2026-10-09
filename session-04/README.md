@@ -1,3 +1,3 @@
-# Session 04 — Object Detection
+# Session 04 — Voice and Vision
 
-A 50-minute 1:1 session on labels, bounding boxes, confidence thresholds, and the cost of false positives versus false negatives. The Colab notebook uses a neutral cat image and exposes `CONFIDENCE`.
+A 50-minute 1:1 session on validated text/voice commands for image-processing modes and visible feedback.
