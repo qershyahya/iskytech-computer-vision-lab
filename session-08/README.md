@@ -1,3 +1,3 @@
-# Session 08 — Threshold Decisions
+# Session 08 — From Classification to Detection
 
-A 50-minute 1:1 session. Learning objective: A threshold trades weak extra boxes against missing real objects. It ends with visible evidence: A confidence rule linked to a real consequence.
+A 50-minute pretrained object-detection lesson covering labels, boxes, confidence, NMS, false positives, and false negatives.
