@@ -1,49 +1,35 @@
-# Computer Vision Lab — Semester Map
+# G2S2 Computer Vision — Semester Map
 
-## Fixed delivery contract
+## Delivery contract
 
-- **Format:** 14 individual 50-minute sessions.
-- **Learner:** one experienced 16-year-old working directly with the facilitator.
-- **Routine:** predict → inspect a real input → run or edit code → record evidence → reflect.
-- **Session page:** one central teaching question, no duplicate timing labels, and one clear next code action.
-- **Notebook:** a real `.ipynb` file, Colab-ready, with concise comments and no simulated code results.
-- **Evidence:** every session ends with a named input, change, output, and decision or limitation.
-- **Progression:** a later session can reuse an earlier model only when it introduces a new decision, test, or output type.
+- **Format:** 12 individual 50-minute sessions.
+- **Routine:** predict → run or edit code → inspect a visible output → record evidence.
+- **Every session:** one distinct technical purpose, one Colab-ready notebook, one evidence card, and a forward link.
+- **Project rules:** detection is never described as recognition; facial work requires privacy, consent, storage, bias, and human-review decisions.
 
-## Existing learning objectives
+| Session | Topic | Learner outcome | Code activity | Evidence card |
+|---:|---|---|---|---|
+| 01 | Computer Vision — retained | Existing published Session 01 remains unchanged. | Existing Session 01 activities remain unchanged. | Existing Session 01 exit evidence remains unchanged. |
+| 02 | Image Manipulation for Vision — retained | Existing published Session 02 remains unchanged. | Existing Session 02 activities remain unchanged. | Existing Session 02 exit evidence remains unchanged. |
+| 03 | Drawing and Shapes on Images | Build live-video output interfaces: boxes, labels, guides, ROIs, status panels, and measurement overlays. | Draw an interface over a webcam frame. | Overlay purpose, ROI, measured value, user feedback. |
+| 04 | Voice and Vision | Turn a voice/text command into a validated vision action and useful visual feedback. | Map commands to safe vision controls. | Command, validated action, visual response, rejected input. |
+| 05 | Color Filtering and Masks | Use HSV masks, trackbars, morphology, and connected components under changing light. | Tune an HSV mask and track connected components. | HSV range, morphology choice, tracked component, lighting failure. |
+| 06 | Object Detection and Shape Analysis | Use contours, geometry, and region properties to detect, classify, count, and measure simple objects; compare with deep learning. | Measure contour-based shapes in a frame. | Shape rule, count/measurement, deep-learning comparison. |
+| 07 | Deep Learning in Vision | Explain CNNs, transfer learning, splits, augmentation, overfitting, and confidence; run a pretrained classifier. | Run and evaluate a pretrained image classifier. | Top labels, confidence, augmentation effect, overfitting risk. |
+| 08 | From Classification to Detection | Interpret detector labels, boxes, confidence, and non-maximum suppression; evaluate false positives/negatives. | Run a pretrained detector and alter its retained-box rule. | Threshold, boxes retained, false-positive/negative cost. |
+| 09 | MediaPipe for Computer Vision | Turn hand, pose, or face landmarks into gestures, measures, or controls. | Use landmarks to trigger a gesture or movement control. | Landmark input, gesture rule, control response, failure case. |
+| 10 | Face Detection | Build real-time face detection while distinguishing it from recognition and applying responsible-use rules. | Run detection only and display non-identifying face boxes. | Consent, storage rule, bias test, human review, no-identification boundary. |
+| 11 | Reviewing and Project Engineering | Compare techniques by accuracy, speed, compute cost, robustness, and privacy; choose a final-project method. | Score candidate methods against project constraints. | Chosen method, rejected method, trade-off, project test plan. |
+| 12 | Final Project | Build, test, document, and demonstrate a complete computer-vision application. | Run a project pipeline with inputs, outputs, evaluation, limits, and responsible-use decision. | Demo result, criteria, limitation, next test, responsible-use rule. |
 
-These are the objectives already established for the course. This map assigns each one a single primary session so the learner does not encounter the same lesson twice under different slide titles.
+## Scope boundary
 
-| # | Session | Primary learning objective | Code outcome | Evidence to retain |
-|---|---|---|---|---|
-| 01 | Ask a camera a question | Match a real question to classification, detection, segmentation, landmarks, or tracking. | Run one of the five starter labs. | Chosen task type and required output. |
-| 02 | Change pixels, change evidence | Explain how crop, detail, blur, light, and colour alter a prediction. | Edit one input; use the detector challenge. | First edit that changes or weakens a result. |
-| 03 | What is in the image? | Use classification for a whole-image label. | Run the classification notebook; compare ranked labels. | Stable and unstable labels. |
-| 04 | Where are the objects? | Use detection to locate objects and compare confidence. | Run the detection notebook; adjust the retained-box threshold. | First box lost and its consequence. |
-| 05 | Which pixels belong to it? | Choose a mask when an object's visible boundary matters. | Run segmentation; inspect masks against boxes. | One task that needs a mask rather than a box. |
-| 06 | Where are the key points? | Interpret landmark coordinates as structured points, not identity. | Run hand-landmark detection; inspect a difficult fingertip or joint. | Point that is uncertain and why. |
-| 07 | Where did it move? | Interpret temporary tracking IDs through a sequence. | Run tracking; change frame range and inspect an ID uncertainty. | Frame where an ID becomes uncertain or switches. |
-| 08 | What does a score cost? | Explain the false-positive / false-negative trade-off in a threshold. | Re-run detection with a fixed image and several thresholds. | Chosen threshold and costlier mistake. |
-| 09 | What did the data leave out? | Identify missing conditions in a small image set. | Build a compact test set inventory in code. | A missing condition and a collection decision. |
-| 10 | Will it survive reality? | Design and execute a controlled robustness test. | Write and run one transformation test against a baseline. | Baseline, changed condition, and failure point. |
-| 11 | Can it be used responsibly? | Add consent, privacy, bias, and human-review rules to a vision task. | Annotate a project brief with use constraints. | One non-negotiable deployment rule. |
-| 12 | Frame one problem worth solving | Define a user, decision, input, output, and success condition. | Create the project notebook scaffold. | Four-line problem brief. |
-| 13 | Build the smallest useful test | Create a narrow prototype with a visible input and evaluation rule. | Implement one project pipeline in code. | Input/output example and a known limitation. |
-| 14 | Defend the result | Present evidence for a prototype and name the next test. | Run the final notebook and compare baseline with a stress case. | Final evidence card and next-test plan. |
+Sessions 01 and 02 are retained exactly as already published. The G2S2 realignment begins at **Session 03**.
 
 ## Sequence gates
 
-The following gates prevent empty work or duplicated lessons:
-
-1. **No new session begins without a distinct question.** Its title, notebook, and exit evidence must answer that question only.
-2. **No notebook is linked before it runs from a clean Colab runtime.** The delivered notebook must show imports, real input, editable learner code where appropriate, and evidence prompts.
-3. **No visual slide is accepted without a desktop render check.** Text, card contents, controls, and visuals must remain inside the teaching surface.
-4. **Each session must add one item to the learner's evidence record.** A prediction alone is not completion.
-5. **Sessions 12–14 use the learner's selected problem.** They do not introduce a sixth generic lab or repeat the five core task types.
-
-## Build order
-
-1. Sessions 03–07: one session per core computer-vision task.
-2. Sessions 08–11: evaluation, data quality, robustness, and responsible use.
-3. Sessions 12–14: individual project framing, prototype, and evidence defence.
-4. Regenerate the full 1:1 guide after the sessions are published, then verify every Colab link and the semester navigation.
+1. The notebook and slide must use the session's stated technique—not a generic substitute.
+2. The code activity must create or inspect a real visible output.
+3. The evidence card records input, action, output, and limitation.
+4. No session repeats a prior session's question or treats a model score as proof.
+5. Session 12 may combine methods only after Session 11 selects them using stated engineering constraints.
