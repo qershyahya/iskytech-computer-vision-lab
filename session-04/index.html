@@ -1,1 +1,97 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Session 04 — Color Filtering and Masks</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><main id="deck"><section class="slide active" id="s1"><article><h2>ISOLATE THE<br><em>COLOUR.</em></h2><p>HSV masks turn a colour rule into visible pixels. Today you will tune a mask, clean it, and track the resulting component.</p><div class="exit">One HSV range<br>One cleaned mask<br>One tracked component</div></article><figure class="classification-visual"><img src="../assets/segmentation-cue-pixels.png" alt="Color masking visual"><figcaption>Which pixels meet the colour rule?</figcaption></figure></section><section class="slide" id="s2"><article><h2>THRESHOLD<br><em>HSV.</em></h2><p>Hue identifies colour family; saturation and value help rule out grey, white, or dark pixels.</p><div class="cards"><div><b>HUE</b>Colour family</div><div><b>SATURATION</b>Colour strength</div><div><b>VALUE</b>Brightness</div></div></article><figure class="classification-visual"><img src="../assets/segmentation-cue-boundary-ribbon.png" alt="Color masking visual"><figcaption>A mask is a test on pixels, not a label from a model.</figcaption></figure></section><section class="slide" id="s3"><article><h2>TUNE THE<br><em>MASK.</em></h2><p>Run the notebook locally. Trackbars change HSV limits, morphology removes noise, and connected components report the largest object.</p><div class="actions continue-actions session-action"><a class="continue-colab" href="https://colab.research.google.com/github/qershyahya/iskytech-computer-vision-lab/blob/main/session-04/notebooks/04_color_filtering_masks.ipynb" target="_blank" rel="noopener"><span>NOTEBOOK 04 · LOCAL WEBCAM</span>OPEN HSV MASK LAB ↗</a><a class="action secondary" href="notebooks/04_color_filtering_masks.ipynb" download>DOWNLOAD NOTEBOOK ↘</a></div></article><figure class="classification-visual"><img src="../assets/segmentation-boot-boundary.png" alt="Color masking visual"><figcaption>Use the real camera image and inspect its mask.</figcaption></figure></section><section class="slide" id="s4"><article><h2>CLEAN THE<br><em>NOISE.</em></h2><p>Opening removes isolated bright pixels. Closing fills small gaps. Use the smallest operation that makes the component usable.</p><div class="classification-evidence"><div><b>RAW MASK</b>All matching pixels</div><div><b>MORPHOLOGY</b>Noise cleanup</div><div><b>COMPONENT</b>Tracked region</div></div></article><figure class="classification-visual"><img src="../assets/decor-binary-tiles.png" alt="Color masking visual"><figcaption>Cleaning changes the mask; record it.</figcaption></figure></section><section class="slide" id="s5"><article><h2>TRACK THE<br><em>COMPONENT.</em></h2><p>The largest connected component gives a centroid and area. That is a rule-based tracker, not deep-learning recognition.</p><div class="challenge-note"><b>CODE TASK</b>Change one HSV limit or morphology setting, then record the centroid/area change and the first lighting failure.</div></article><figure class="classification-visual"><img src="../assets/tracking-ball-trail.png" alt="Color masking visual"><figcaption>A component is only as stable as the mask that produced it.</figcaption></figure></section><section class="slide" id="s6"><article><h2>TEST THE<br><em>LIGHT.</em></h2><p>Move the coloured object into shadow or glare. Explain whether HSV still separates it from the background.</p><div class="cards"><div><b>RANGE</b>HSV limits</div><div><b>FAILURE</b>Lighting condition</div><div><b>CHECK</b>What a person verifies</div></div></article><figure class="classification-visual"><img src="../assets/failure-mug-shadow.png" alt="Color masking visual"><figcaption>Colour rules work best in controlled conditions.</figcaption></figure></section><section class="slide" id="s7"><article><h2>MASK IT.<br><em>RECORD IT.</em></h2><p>Finish the evidence card for your rule-based tracker.</p><div class="exit">HSV range: ______<br>Morphology: ______<br>Component: ______<br>Lighting failure: ______</div><a class="action secondary" href="../session-05/">CONTINUE TO SESSION 05 ↗</a></article><figure class="classification-visual"><img src="../assets/evidence-flow.png" alt="Color masking visual"><figcaption>Next: use validated voice or text commands to control a vision action.</figcaption></figure></section></main><aside id="timer"><b>50-MINUTE SESSION</b><span></span><button>HIDE TIMER</button></aside><button id="show-timer">SHOW TIMING</button><nav><button id="prev">←</button><button id="next">→</button></nav><script src="deck.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Session 04 — Color Filtering and Masks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="deck">
+    <section class="slide active" id="s1">
+      <article>
+        <p class="kicker">0–5 MIN · NOTICE THE PIXELS</p>
+        <h2>A MASK IS A<br><em>PIXEL DECISION.</em></h2>
+        <p>Today’s question: can a simple colour rule isolate the blue tile while ignoring the green triangle, yellow circle, and dark stone? A mask answers once for every pixel: <strong>keep</strong> or <strong>ignore</strong>.</p>
+        <div class="teach-card"><b>PREDICT</b>Point to the pixels that should become white in a blue-object mask. What might accidentally become white?</div>
+      </article>
+      <figure><img src="assets/mask-lab-source.png" alt="Blue square tile, green triangle, yellow circle, and dark stone on a neutral background"><figcaption>The notebook uses this controlled image before you test a real scene.</figcaption></figure>
+    </section>
+
+    <section class="slide" id="s2">
+      <article>
+        <p class="kicker">5–11 MIN · CHOOSE A RULE</p>
+        <h2>HSV GIVES<br><em>THREE CLUES.</em></h2>
+        <p>Hue is the colour family. Saturation is how strong that colour is. Value is how bright it is. A blue tile in shadow may keep its hue while losing value; a bright reflection may lose saturation.</p>
+        <div class="three-cards"><div><b>H · HUE</b>Is it in the blue family?</div><div><b>S · SATURATION</b>Is the colour strong enough?</div><div><b>V · VALUE</b>Is it bright enough to trust?</div></div>
+        <div class="teach-card"><b>DECIDE</b>When a blue tile enters shadow, which limit would you inspect first: H, S, or V? Explain why.</div>
+      </article>
+      <figure><img src="assets/hsv-light-lab.png" alt="Blue tile under directional light with colored filters"><figcaption>HSV separates colour family from colour strength and brightness.</figcaption></figure>
+    </section>
+
+    <section class="slide" id="s3">
+      <article>
+        <p class="kicker">11–20 MIN · BUILD + INSPECT</p>
+        <h2>THE RULE MAKES<br><em>A RAW MASK.</em></h2>
+        <p>The notebook converts the image from RGB to HSV, then checks whether every pixel falls between two blue limits. The first result is a <strong>raw mask</strong>: useful evidence, but not yet a trustworthy object.</p>
+        <pre><code>hsv  = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+mask = cv2.inRange(hsv, LOWER_BLUE, UPPER_BLUE)</code></pre>
+        <div class="teach-card"><b>CHECK</b>Open the Colab notebook. Change only one number in <code>LOWER_BLUE</code> or <code>UPPER_BLUE</code>, rerun, and describe one changed region.</div>
+        <a class="continue-colab" href="https://colab.research.google.com/github/qershyahya/iskytech-computer-vision-lab/blob/main/session-04/notebooks/04_color_filtering_masks.ipynb" target="_blank" rel="noopener"><span>NOTEBOOK 04 · COLAB-READY</span>OPEN THE HSV MASK LAB ↗</a>
+      </article>
+      <figure><img src="assets/threshold-filter.png" alt="A blue tile seen through a filter that isolates it from surrounding objects"><figcaption>A threshold is a rule you can inspect and edit, not a model guessing a label.</figcaption></figure>
+    </section>
+
+    <section class="slide" id="s4">
+      <article>
+        <p class="kicker">20–29 MIN · CLEAN WITH A REASON</p>
+        <h2>REMOVE SPECKS.<br><em>KEEP EVIDENCE.</em></h2>
+        <p>Mask pixels can be scattered or have small holes. <strong>Opening</strong> removes isolated specks. <strong>Closing</strong> fills small holes. Both operations change the evidence, so use the smallest change that fixes a visible problem.</p>
+        <div class="two-cards"><div><b>OPEN</b>Use when tiny matching pixels are not part of the object.</div><div><b>CLOSE</b>Use when one object has small gaps inside it.</div></div>
+        <div class="teach-card"><b>EXPLAIN</b>If opening deletes part of your tile, should you use a larger or smaller kernel? What observation supports your choice?</div>
+      </article>
+      <figure><img src="assets/morphology-cleanup.png" alt="Mosaic shapes changing from noisy and broken to clean components"><figcaption>Cleaning should make a reasoned improvement, not hide an unexplained failure.</figcaption></figure>
+    </section>
+
+    <section class="slide" id="s5">
+      <article>
+        <p class="kicker">29–38 MIN · MEASURE ONE REGION</p>
+        <h2>FROM MASK TO<br><em>MEASUREMENT.</em></h2>
+        <p>Connected components groups touching white pixels into separate regions. We choose the largest region, then record its bounding box, centre point, and area. That produces a rule-based tracker output.</p>
+        <div class="three-cards"><div><b>BOX</b>Where is the region?</div><div><b>CENTRE</b>Where is its midpoint?</div><div><b>AREA</b>How much image evidence remains?</div></div>
+        <div class="teach-card"><b>INTERPRET</b>A tiny bright speck matches the blue rule. Why should it not become the tracked object?</div>
+      </article>
+      <figure><img src="assets/connected-components.png" alt="Large blue component with a measuring box and centre marker alongside smaller components"><figcaption>“Largest component” is an explicit rule. It can work, and it can fail.</figcaption></figure>
+    </section>
+
+    <section class="slide" id="s6">
+      <article>
+        <p class="kicker">38–45 MIN · STRESS THE RULE</p>
+        <h2>LIGHT CHANGES<br><em>THE EVIDENCE.</em></h2>
+        <p>Keep the object fixed, then compare normal light, shadow, and glare. A failed mask tells you which condition your rule cannot handle yet. Change one HSV bound at a time so the cause stays clear.</p>
+        <div class="three-cards"><div><b>DAYLIGHT</b>Baseline: does the target appear?</div><div><b>SHADOW</b>Does low value remove target pixels?</div><div><b>GLARE</b>Does low saturation create a hole?</div></div>
+        <div class="teach-card"><b>TEST</b>Before you change values, predict whether shadow or glare will fail first. After testing, write whether your prediction was supported.</div>
+      </article>
+      <figure><img src="assets/lighting-stress-test.png" alt="Same blue tile in balanced light, shadow, and glare"><figcaption>One object can produce different pixel evidence under different lighting.</figcaption></figure>
+    </section>
+
+    <section class="slide" id="s7">
+      <article>
+        <p class="kicker">45–50 MIN · DEFEND YOUR RESULT</p>
+        <h2>RECORD THE<br><em>LIMIT.</em></h2>
+        <p>A usable vision rule includes its evidence and its limit. Complete the card before you move on: another person should be able to rerun your test and understand where it stops working.</p>
+        <div class="evidence-card"><b>MY MASK RECORD</b><span>Target: ____________________</span><span>HSV rule: __________________</span><span>Cleanup: ___________________</span><span>Area / centre: ______________</span><span>First failure: _______________</span><span>Human check: _______________</span></div>
+        <div class="teach-card"><b>EXIT</b>What made your result believable: the rule, the mask, the measurement, or the test? Name one piece of evidence.</div>
+      </article>
+      <figure><img src="assets/evidence-notebook.png" alt="Notebook, mask printout, blue tile, ruler, and pencil"><figcaption>Next session: use contours and geometry when colour alone is not enough.</figcaption></figure>
+    </section>
+  </main>
+  <aside id="timer"><b>50-MINUTE SESSION</b><span></span><button aria-label="Hide timing cue">HIDE TIMER</button></aside>
+  <button id="show-timer">SHOW TIMING</button>
+  <nav aria-label="Slide navigation"><button id="prev" aria-label="Previous slide">←</button><button id="next" aria-label="Next slide">→</button></nav>
+  <script src="deck.js"></script>
+</body>
+</html>
