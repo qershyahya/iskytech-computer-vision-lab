@@ -1,3 +1,3 @@
-# Session 05 — Color Filtering and Masks
+# Session 05 — Voice and Vision
 
-A 50-minute 1:1 HSV-mask, morphology, and connected-component tracking lesson.
+A 50-minute 1:1 session on validated text/voice commands for image-processing modes and visible feedback.
