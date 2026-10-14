@@ -34,3 +34,9 @@ A reviewer may score 8–10 only when the criterion above is fully visible on th
 ## Re-check trigger
 
 Repeat this panel if any slide copy, visual, learner task, mask code, or timing changes. A replacement asset is not automatically approved merely because it is attractive: it must still make the slide's learning move clearer.
+
+## Notebook verification record
+
+- **Algorithm execution:** passed against the published raw GitHub lesson asset. The mask produced one non-background component with area **68,605 pixels**, centre **(263, 463)**, and a non-zero bounding box.
+- **Notebook integrity:** all Python cells compile before upload; the notebook opens at the published Colab route.
+- **Colab runtime status:** the environment used for this review can load the public Colab page but has no signed-in Colab runtime, so it cannot truthfully claim an in-UI runtime execution. The first acceptance check in an authenticated Colab session is: **Runtime → Disconnect and delete runtime**, then **Run all**. The notebook intentionally uses no webcam, browser permission, or desktop-window call, so that acceptance check is limited to the standard Python image pipeline.
