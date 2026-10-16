@@ -11,12 +11,12 @@ The same four reviewers inspect the written slide, its visual, the interaction, 
 | Slide | Round 1 issue → concrete correction | Instructional designer | Teacher | CV SME | Student | Result |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | 1 | Generic object art did not explain the process → original contour-to-measurement visual plus prediction prompt. | 9 | 9 | 9 | 9 | Pass |
-| 2 | “Contour” was introduced without evidence → pixel-to-mask-to-outline sequence and a foreground/background explanation. | 9 | 9 | 9 | 8 | Pass |
+| 2 | The symbol-only sequence was unclear → replacement visual explicitly shows original triangle → binary mask → contour and corners. | 9 | 9 | 9 | 9 | Pass |
 | 3 | Measurements were named without a use → four clues are paired with four questions and a marked shape board. | 9 | 9 | 9 | 8 | Pass |
 | 4 | Notebook hand-off was passive → prediction before running, explicit expected evidence, and large Colab action. | 9 | 9 | 9 | 9 | Pass |
 | 5 | Failure was abstract → unique separated-versus-touching contour visual and one-condition stress exercise. | 9 | 9 | 10 | 9 | Pass |
 | 6 | Method comparison was too broad → controlled-shape conditions contrasted with varied real-world objects. | 9 | 9 | 10 | 8 | Pass |
-| 7 | Exit lacked proof of learning → five evidence prompts capture rule, result, failure, and method choice. | 9 | 9 | 9 | 9 | Pass |
+| 7 | The exit checklist was too abstract → replacement evidence-notebook visual shows each record item beside its visual evidence. | 9 | 9 | 9 | 9 | Pass |
 
 ## Notebook verification
 
